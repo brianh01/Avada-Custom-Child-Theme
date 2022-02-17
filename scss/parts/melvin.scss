@@ -1,0 +1,1806 @@
+.page-id-312{
+    .fusion-page-title-bar{
+        background-position: bottom;
+    }
+}
+
+.page-id-732,
+.page-id-312,
+.page-id-318,
+.page-id-752,
+.page-id-758 {
+    
+    @media (max-width: 767px) {
+        #main,
+        #main,
+        .acneScarring-container {
+            padding-top: 0 !important;
+        }
+    }
+    
+    
+    /*
+    #pricing {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+        table {
+            th, td {
+                white-space: nowrap;
+            }
+        }
+    } 
+    */
+}
+
+
+.laserTreatmentPage-subtitle{
+    text-transform: uppercase;
+    * {
+        color: $dark-green !important;
+        font-family: $avenir-black !important;
+        letter-spacing: 1.8px !important;
+    }    
+}
+.laserTreatmentPage-description{
+    p{
+        font-family: $avenir-book;
+    }
+}
+
+.preparation-greenTxt{
+    color: $dark-green !important;
+}
+.preparation-blackTxt{
+    color: $black !important;
+}
+.preparation-avenirHeavy{
+    font-family: $avenir-heavy !important;
+}
+.preparation-avenirBook{
+    font-family: $avenir-book !important;
+}
+.preparation-avenirBlack{
+    font-family: $avenir-black !important;
+}
+
+
+.page-id-307{
+    #main{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+
+.laserTreatment-container {
+    @media (max-width: 1500px) {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+        .textColumn {
+            width: calc(50% - ( ( 0px ) * 0.5 ) ) !important;
+            margin-right: 0px !important;
+        }
+        .imgColumn {
+            width: calc(50% - ( ( 0px ) * 0.5 ) ) !important;
+        }
+    }
+}
+
+.laserTreatment-headerText{
+    .laserTreatmentPage-header{
+        h2{
+            font-size: 36px !important;
+        }
+    }
+    .laserTreatmentPage-subtitle{
+        margin-bottom: 50px;
+        p{
+            font-size: 18px !important;
+            letter-spacing: 1.4px !important;
+        }
+    }
+    .verticalLine{
+        width: 1px;
+        height: 99px;
+        background-color: $dark-green;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+    @media (max-width: $break-sm-medium){
+        .laserTreatmentPage-header{
+            h2{
+                font-size: 36px !important;
+            }
+        }
+        .laserTreatmentPage-subtitle{
+            p{
+                font-size: 18px !important;
+            }
+        }
+    }
+    @media (max-width: 660px){
+        .laserTreatmentPage-header{
+            h2{
+                font-size: 20px !important;
+            }
+        }
+        .laserTreatmentPage-subtitle{
+            p{
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+
+
+.laserTreatment-section1{
+    .st-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .treatment-item:not(:nth-child(3)){
+            margin-right: 20px;
+        }
+        .treatment-item{
+            width: calc(33.3% - 15px);
+            max-width: 100%;
+            margin-bottom: 178px;
+            img{
+                width: 100%;
+                height: 355px;
+                object-fit: cover;
+            }
+            .item-title{
+                h4{
+                    font-family: $avenir-heavy !important;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $break-medium){
+        .st-list{
+            padding: 0;
+            .treatment-item:not(:nth-child(3)){
+                margin-right: 0;
+            }
+            .treatment-item:not(:nth-child(2)){
+                margin-right: 20px;
+            }
+            .treatment-item{
+                margin-bottom: 75px;
+                width: calc(50% - 20px);
+                .thumbnail-container{
+                    img{
+                        height: 204px !important;
+                    }
+                }
+                .item-title{
+                    h4{
+                        font-size: 24px !important;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px){
+        .st-list{
+            .treatment-item{
+                width: 100%;
+                text-align: center !important;
+                .item-title{
+                    h4{
+                        font-size: 20px !important;
+                    }
+                }
+                .item-desc{
+                    p{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        .st-list{
+            .treatment-item{
+                width: 100% !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+    
+}
+
+
+
+.booknow3Columns{
+    .fusion-row{
+        width: 100%;
+        max-width: 100% !important;
+    }
+    @media (max-width: 1400px) {
+        .fusion-row {
+            .fusion-layout-column {
+                .fusion-column-wrapper {
+                    padding: 100px 50px !important;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $break-medium){
+        padding: 30px;
+        .fusion-row{
+            display: flex;
+            flex-wrap: wrap;
+            .fusion-layout-column:not(:first-child){
+                margin-left: 10px !important;
+            }
+            .fusion-layout-column:not(:last-child){
+                margin-right: 10px !important;
+            }
+            .fusion-layout-column{
+                width: calc(33.33% - ( ( 7% + 0% ) * 0.3333 ) ) !important;
+                .fusion-column-wrapper{
+                    padding-top: 50px!important;
+                    padding-bottom: 50px !important;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    border-right: none !important;
+                    text-align: center !important;
+                    h3{
+                        font-size: 18px !important;
+                        text-align: center !important;
+                    }
+                }
+            }    
+        }
+    }
+    @media (max-width: 767px){
+        padding: 0;
+        .fusion-row{
+            .fusion-layout-column:not(:last-child){
+                border-bottom: 3px solid #fff;
+            }
+            .fusion-layout-column{
+                width: 100% !important;
+                .fusion-column-wrapper{
+                    padding-left: 30px !important;
+                    padding-right: 30px !important;
+                    h3{
+                        font-size: 20px !important;
+                    }
+                    p{
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.acneScarring-container{
+    .fusion-row{
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+    .acneIMG .fusion-column-wrapper{
+        position: relative;
+        min-height: 640px !important;
+        text-align: center;
+        .acne-upperImg{
+            position: relative;
+            img{
+                width: 384px;
+                height: 551px;
+            }
+        }
+        .acne-lowerImg{
+            bottom: 10px;
+            right: 15px;
+            position: absolute;
+            img{
+                width: 240px;
+                height: 351px;
+            }
+        }
+    }
+    
+    @media (max-width: $break-large){
+        .acneIMG{
+            width: calc(50% - ( ( 0px ) * 0.5 ) ) !important;
+            .acne-lowerImg{
+                right: 0; 
+            }
+        }
+        .acneTxt{
+            width: calc(50% - ( ( 100px ) * 0.5 ) ) !important;
+            margin-right: 50px !important;
+        }
+    }
+
+    @media (max-width: $break-medium){
+        .acneTxt {
+            margin-right: 0 !important;
+            margin-bottom: 50px !important;
+            .fusion-column-content-centered{
+                .fusion-column-content{
+                    text-align: center;
+                    h2{
+                        text-align: center;
+                        font-size: 36px !important;
+                    }
+                    .laserTreatmentPage-subtitle{
+                        p{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+        .acneIMG .fusion-column-wrapper{
+            text-align: right;
+            .acne-upperImg{
+                img{
+                    width: calc(100% - 20%);
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .acne-lowerImg{
+                right: unset;
+                left: 0;
+                bottom: 25%;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0!important;
+        .fusion-row{
+            padding-left: 0!important;
+            padding-right: 0 !important;
+            .acneTxt{
+                padding-left: 30px;
+                padding-right: 30px;
+                .fusion-column-content-centered{
+                    .fusion-column-content{
+                        text-align: center;
+                        h2{
+                            font-size: 20px !important;
+                        }
+                        .laserTreatmentPage-subtitle{
+                            p{
+                                font-size: 14px !important;
+                                letter-spacing: 1.4px;
+                            }
+                        }
+                        .laserTreatmentPage-description{
+                            p{
+                                font-size: 14px !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .acneIMG{
+                margin-bottom: 0 !important;
+                .fusion-column-wrapper{
+                    min-height: 1px !important;
+                    .acne-upperImg{
+                        img{
+                            width: 100%;
+                            height: 252px;
+                        }
+                    }
+                    .acne-lowerImg{
+                        display: none;
+                    }
+                }    
+            }
+        }
+    }
+}
+
+
+.howdoesitwork{
+    @media (max-width: $break-medium){
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 128px;
+            background-color: #487169;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .fusion-title{
+            h2{
+                font-size: 36px !important;
+            }
+        }
+        .laserTreatmentPage-subtitle{
+            h4{
+                font-size: 18px !important;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        &::before {
+            display: none;
+        }
+        padding-bottom: 0 !important;
+        .fusion-title{
+            h2{
+                font-size: 20px !important;
+            }
+        }
+        .laserTreatmentPage-subtitle{
+            h4{
+                font-size: 14px !important;
+            }
+        }
+        .doesitworkContainer{
+            .doesitworkTxt{
+                h4{
+                    font-size: 20px !important;
+                }
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+    .doesitwork{
+        margin-top: 80px;
+        .doesitworkColumn{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .doesitworkContent{
+                width: calc(20% - 5px);
+                max-width: 100%;
+                text-align: center;
+                .doesitworkimg{
+                    background-color: $dark-green;
+                    border-radius: 15px;
+                    height: 75px;
+                    width: 75px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    justify-content: center;
+                    padding: 13px;
+                    i{
+                        color: $white;
+                        border: 2px solid $white;
+                        border-radius: 50%;
+                        font-size: 30px;
+                        padding: 10px;
+                    }
+                }
+                .doesitworkTxt{
+                    h4{
+                        margin-bottom: 7px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $break-medium){
+            .doesitworkColumn{
+                .doesitworkContent{
+                    width: calc(33.33% - 5px);
+                    margin-bottom: 50px;
+                }
+            }
+        }
+        @media (max-width: 767px){
+            .doesitworkColumn{
+                .doesitworkContent{
+                width: 100%;
+                .doesitworkTxt{
+                    h4{
+                        font-size: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+
+
+.fusion-body{
+    .laserTreatment-benefits{
+        .textColumn{
+            .laserTreatmentPage-subtitle{
+                margin-bottom: 88px;
+            }
+            .laserTreatmentPage-description{
+                margin-bottom: 79px;
+            }
+            img{
+                margin-bottom: 20px;
+            }
+        }
+        
+        .imgColumn{
+            position: relative;
+            min-height: 300px !important;
+            text-align: right;
+            .lasetTreatment-benefitIMG-lower{
+                position: absolute;
+                left: 70px;
+                bottom: 60px;
+                z-index: 2;
+                img{
+                    width: 296px;
+                    height: 444px;
+                    object-fit: cover;
+                }
+            }
+            
+            .lasetTreatment-benefitIMG-upper{
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                img{
+                    width: 408px;
+                    height: 612px;
+                    object-fit: cover;
+                }
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .imgColumn {
+                .lasetTreatment-benefitIMG-lower {
+                    left: 0;
+                }
+            }
+        }
+        
+        @media (max-width: $break-medium){
+            padding-left: 80px !important;
+            padding-right: 80px !important;
+            height: 1125px; 
+            
+            
+                .laserTreatmentPage-title > *,
+                .laserTreatmentPage-subtitle {
+                    text-align: center !important;
+                }
+                .benefitsColumn-left{
+                    width: 50% !important;
+                    .fusion-column-wrapper{
+                        margin-right: 20px;
+                        text-align: center;
+                        h4{
+                            text-align: center;
+                        }
+                    }     
+                }
+                
+                .benefitsColumn-right{
+                    width: 50% !important;
+                    .fusion-column-wrapper{
+                        margin-left: 20px;
+                        text-align: center;
+                        h4{
+                            text-align: center;
+                        }
+                    }
+                }
+            
+            
+            .imgColumn {
+                > div {
+                    min-height: 1px !important;
+                }
+                .fusion-column-content {}
+                .lasetTreatment-benefitIMG-upper {
+                    img {
+                        width: calc( 100% - 30% );
+                    }
+                } 
+                
+                
+            }
+            
+            
+        }
+        @media (max-width: $break-medium){
+            .fusion-title{
+                h2{
+                    font-size: 36px !important;
+                }
+            }
+            .laserTreatmentPage-subtitle{
+                p{
+                    font-size: 18px;
+                }
+            }
+            .imgColumn{
+                .fusion-column-content{
+                    text-align: right !important;
+                }
+                .lasetTreatment-benefitIMG-lower{
+                    left: 0;
+                    bottom: 30%;
+                    img{
+                        height: 321px;
+                    }
+                }
+                .lasetTreatment-benefitIMG-upper{
+                    position: absolute;
+                    right: 0;
+                    img{
+                        height: 385px;
+                    }
+                }
+                
+            }
+            .imgColumn{
+                .fusion-column-wrapper{
+                    text-align: right !important;
+                    margin-bottom: 500px;
+                }
+            }
+        }
+        @media (max-width: 767px){
+            padding-left: 30px!important;
+            padding-right: 30px !important;
+            height: 1350px;
+            .fusion-title h2{
+                font-size: 20px !important;
+            }
+            .laserTreatmentPage-subtitle p{
+                    font-size: 14px !important;
+            }
+            
+            .benefitsColumn-left{
+                width: 100% !important;
+                .fusion-column-wrapper{
+                    h4{
+                        font-size: 20px !important;
+                    }
+                }
+                .laserTreatmentPage-description{
+                    p{
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            
+            .benefitsColumn-right{
+                width: 100% !important;
+                .fusion-column-wrapper{
+                    h4{
+                        font-size: 20px !important;
+                    }
+                }
+                .laserTreatmentPage-description{
+                    p{
+                        font-size: 14px !important;
+                    }
+                }
+            }
+            .imgColumn{
+                .fusion-column-wrapper{
+                    margin-bottom: 50px;
+                    .lasetTreatment-benefitIMG-lower{
+                        display: none;
+                    }
+                    .lasetTreatment-benefitIMG-upper{
+                        img{
+                            width: 100% !important;
+                            height: 256px !important; 
+                        }
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 639px) {
+            height: 1450px;
+        }
+        
+        @media (max-width: 390px) {
+            height: 1600px;
+        }
+    }
+}
+
+
+.laserTreatment-container{  
+    @media (max-width: $break-medium){
+        .textColumn{
+            margin-bottom: 40px !important;
+            .fusion-column-content{
+                text-align: center;
+            }
+            .laserTreatmentPage-title {
+                
+                h2{
+                    font-size: 36px !important;
+                    text-align: center;
+                }
+            }
+            .laserTreatmentPage-subtitle{
+                
+                p{
+                    font-size: 18px !important;
+                }
+            }
+            .laserTreatmentPage-desciption{
+                
+                p{
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .textColumn{
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+            .laserTreatmentPage-title{
+                h2{
+                    font-size: 20px !important;
+                }
+            }
+            .laserTreatmentPage-subtitle{
+                p{
+                    font-size: 14px !important;
+                }
+            }
+            .laserTreatmentPage-description{
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+    
+    .imgColumn{
+        
+        .fusion-column-wrapper{
+            min-height: 680px !important;
+            position: relative;
+            text-align: center;
+            .laserTreatmentImg-small{
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(50%);
+                z-index: 2;
+                
+                img{
+                    width: 240px;
+                    height: 351px;
+                }
+            }
+            .laserTreatmentImg-large{
+                z-index: 1;
+                img{
+                    width: 444px;
+                    height: 643px;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    @media (max-width: $break-large){
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        .textColumn{
+            width: calc(50% - ( ( 100px ) * 0.5 ) ) !important;
+            margin-right: 50px !important;
+        }
+    }
+    @media (max-width: $break-medium){
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+        .imgColumn{
+            
+            .fusion-column-wrapper{
+                text-align: right;
+                min-height: 450px !important;
+            }
+            .laserTreatmentImg-small{
+                transform: unset !important;
+                top: 35px !important;
+                img{
+                    height: 321px !important;
+                }
+            }
+            .laserTreatmentImg-large{
+                img{
+                    width: calc(100% - 20%) !important;
+                    height: 385px !important;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    @media (max-width: 767px){
+        padding-top: 50px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+        .imgColumn{
+            margin-bottom: 0px !important;
+            .fusion-column-wrapper{
+                min-height: 1px !important;
+            }
+            .laserTreatmentImg-small{
+                display: none;
+            }
+            .laserTreatmentImg-large{
+                img{
+                    width: 100% !important;
+                    height: 242px;
+                }
+            }
+        }
+    }
+}
+
+/** Globals **/
+
+.preparationSection{
+    @media screen and (max-width: $break-medium) {
+        padding-top: 200px !important;
+    }
+    
+    .fusion-row{
+        @media (max-width: $break-medium){
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+            .fusion-title{
+                h2{
+                    font-size: 36px !important;
+                }
+                
+            }
+        }
+        @media (max-width: 767px){
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            .fusion-title{
+                h2{
+                    font-size: 20px !important;
+                }
+            }
+            .laserTreatmentPage-subtitle{
+                p{
+                    font-size: 14px !important;
+                }
+            }
+        }
+        .preparationContent{
+            margin-top: 100px;
+            
+            @media screen and (max-width: $break-medium) {
+                margin-top: 50px;
+            }
+            
+            .preparationRow{
+                display: flex;
+                flex-wrap: wrap;
+                .prepColumn{
+                    width: calc(25% - 5px);
+                    .preparation-separator::before{
+                        content: "•";
+                        position: absolute;
+                        bottom: -15px;
+                        left: -2px;
+                        font-size: 20px;
+                        color: $medium-green;
+                    }
+                    .preparation-separator{
+                        position: relative;
+                        border-bottom: 1px solid #6BC1B2;
+                        margin-top: 30px;
+                        margin-bottom: 40px;
+                    }
+                    .prepTxt{
+                        padding-right: 30px;
+                    }
+                }
+            }
+            
+            @media (max-width: $break-medium) {
+                .preparationRow{
+                    .prepColumn{
+                        width: 50%;
+                    }
+                }
+            }
+            
+            @media (max-width: 767px) {
+                .preparationRow{
+                    .prepColumn{
+                        display: flex;
+                        width: 100%;
+                        > p {
+                            width: 50px;
+                        }
+                        .preparation-separator {
+                            height: calc(100% - 20%);
+                            width: 1px;
+                            background-color: #6bc1b2;
+                            left: -30px;
+                            &::before {
+                                top: -15px;
+                                left: -5px;
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: 767px){
+                
+                
+                .prepColumn{
+                    margin-bottom: 40px;
+                    position: relative;
+                    p.preparation-avenirHeavy{
+                        font-size: 18px;
+                    }
+                    
+                    p.preparation-greenTxt{
+                        position: absolute;
+                        left: 30px;
+                        top: 0;
+                    }
+                    .preparation-separator{
+                        height: calc(100% - -25%) !important;
+                        left: 0 !important;
+                        margin-top: 15px !important;
+                    }
+                    .prepTxt{
+                        padding-left: 30px;
+                        padding-top: 40px;
+                        p{
+                            font-size: 14px;
+                            margin-bottom: 10px!important;
+                        }
+                    }
+                    .end{
+                        height: 0 !important;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.page-id-1521{
+    #main{
+        padding: 0 !important;
+        > .fusion-row{
+            max-width: 100%;
+        }
+    }
+}
+
+.tabCenter{
+    text-align: center;
+    position: relative;
+}
+
+.tabCenter:not(:last-child)::after{
+    content: "";
+    border-top: 2px solid #D2E8E4;
+    position: absolute;
+    width: 100px;
+    bottom: 65%;
+    right: -120px;
+    @media (max-width: $break-large){
+        width: 100px;
+        right: -120px;
+    }
+    @media (max-width: 900px){
+        right: -95px;
+    }
+    @media (max-width: 845px){
+        right: -110px;
+        bottom: 55%;
+    }
+    @media (max-width: 575px){
+        width: 50px;
+        right: -60px;
+    }
+    @media (max-width: 480px){
+        display: none;
+    }
+}
+
+#tabContainer{
+    .tabList{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        
+        .active{
+            .imagebox{
+                background-color: $dark-green !important;
+            }
+        }
+        .imagebox{
+            background-color: #D2E8E4;
+            height: 75px;
+            width: 75px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            img{
+                width: auto;
+                height: 54px;
+            }
+        }
+        
+        .tabTitle{
+            h7{
+                font-family: $avenir-black;
+                color: $dark-green;
+            }
+        }
+    }
+    @media(max-width: $break-large){
+        .tabList{
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 80px;
+        }
+    }
+    @media(max-width: 767px){
+        .tabList{
+            padding: 0 30px;
+            .tabTitle{
+                display: none;
+            }
+        }
+    }
+}
+
+.treatmentDetails-panel{
+    width: 1414px !important;
+    max-width: 100% !important;
+    margin: auto;
+    @media (max-width: $break-large){
+        padding: 100px 80px 0 !important;
+        .bookingSummary,
+        .bookingProduct{
+            width: 100% !important;
+        }
+    }
+    @media (max-width: 767px){
+        padding: 30px 30px 0 !important;
+    }
+    .smallNumber{
+        margin-bottom: 5px !important;
+    }
+    @media (max-width: 767px){
+        .fusion-title.smallNumber{
+            margin-top: 60px! important;
+            h6{
+                text-align: center !important;
+            }
+        }
+    }
+    .bookingLabels{
+        @media(max-width: 767px){
+            h3{
+                text-align: center !important;
+                font-size: 20px !important;
+            }
+        }
+    }
+    .selection{
+        display: flex;
+        flex-wrap: wrap;
+        
+        
+        .selectionBox:hover{
+            background-color: $dark-green;
+            p{
+                color: $white;
+            }
+        }
+        .selectionBox{
+            padding: 10px 35px;
+            border-radius: 30px;
+            background-color: #D2E8E4;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            
+            @media (max-width: 767px){
+                width: 100%;
+                text-align: center;
+            }
+            p{
+                color: $dark-green;
+                margin: 0 !important;
+                font-family: $avenir-black;
+                letter-spacing: 1.2px;
+                font-size: 12px !important;
+            }
+        }
+    }
+    .skinTone{
+        display: flex;
+        
+        @media (max-width: 767px){
+            justify-content: center;
+        }
+        .colorList:last-child{
+            margin-right: 0;
+        }
+        .colorList{
+            width: 75px;
+            height: 75px;
+            margin-right: 10px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media(max-width: 767px){
+                width: 40px;
+                height: 40px;
+            }
+            div{
+                width: 65px;
+                height: 65px;
+                
+                @media(max-width: 767px){
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+        .skinOne{
+            background-color: #FDEBE2;
+        }
+        .skinTwo{
+            background-color: #F5D7C8;
+        }
+        .skinThree{
+            background-color: #F8C8B1;
+        }
+        .skinFour{
+            background-color: #E0A688;
+        }
+        .skinFive{
+            background-color: #C6896B;
+        }
+        .skinSix{
+            background-color: #915538;
+        }
+        .skinSeven{
+            background-color: #582E19;
+        }
+    }
+    .hairColor-list{
+        display: flex;
+        
+        @media (max-width: 767px){
+            justify-content: center;
+        }
+        .hairColor:last-child{
+            margin-right: 0;
+        }
+        .hairColor{
+            width: 75px;
+            height: 75px;
+            margin-right: 10px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media(max-width: 767px){
+                width: 40px;
+                height: 40px;
+            }
+            div{
+                width: 65px;
+                height: 65px;
+                
+                @media(max-width: 767px){
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+        .hairOne{
+            background-color: #EFD8B9;
+        }
+        .hairTwo{
+            background-color: #F0B67B;
+        }
+        .hairThree{
+            background-color: #E37544;
+        }
+        .hairFour{
+            background-color: #9F735C;
+        }
+        .hairFive{
+            background-color: #72331C;
+        }
+        .hairSix{
+            background-color: #391403;
+        }
+        .hairSeven{
+            background-color: #000000;
+        }
+    }
+/**    .toolTip{
+        display: flex;
+        position: relative;
+        p.fs-12{
+            margin-right: 10px;
+            text-decoration: underline;
+        }
+        .toolTip-trigger{
+            background-color: $black;
+            border-radius: 50%;
+            text-align: center;
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            top: 9px;
+            left: 18%;
+            cursor: pointer;
+            p{
+                color: $white;
+                font-size: 9px;
+                margin-top: -7px;
+            }
+            .toolTip-text{
+                width: 290px;
+                background-color: $white;
+                text-align: left;
+                box-shadow: 0 5px 10px rgba(4, 4, 4, 0.3);
+                padding: 25px;
+                display: inline-grid;
+                position: relative;
+                visibility: hidden;
+                .toolTip-close{
+                    position: absolute;
+                    top: 27px;
+                    right: 27px;
+                    cursor: pointer
+                }
+            }
+        }
+        .toolTip-trigger:hover{
+            .toolTip-text{
+                visibility: visible;
+            }
+        }
+        
+    }**/
+    
+    
+    .popupTextcolumn{
+        width: calc(18% - ( ( 0% ) * 0.2 ) ) !important;
+        margin-bottom: 0 !important;
+        
+        
+        p{
+            margin-bottom: 0 !important;
+        }
+    }
+    .popupImagecolumn{
+        padding-top: 8px !important;
+        margin-bottom: 0 !important;
+        width: 40% !important;
+        img{
+            width: 11px;
+            height: 11px;
+        }
+    }
+    .reactionImage-column{
+        padding-top: 10px !important;
+    }
+    
+}
+
+
+
+.treatmentDetails-panelB{
+    width: 1414px !important;
+    max-width: 100% !important;
+    margin: auto !important;
+    @media (max-width: $break-large){
+        padding: 60px 80px 120px !important;
+    }
+}
+
+.testaButton{
+    @media (max-width: $break-large){
+        width: 100% !important;
+    }
+}
+
+.skinreactionSelection{
+    select{
+        border-radius: 30px;
+        width: 585px;
+        max-width: 100%;
+        padding: 0 10px;
+        height: 50px;
+        border-color: $dark-green !important;
+        option{
+            font-size: 18px;
+            font-family: $avenir-book;
+            color: $black;
+        }
+    }
+}
+
+.toogleProducts-list{
+    @media (max-width: 767px){
+        margin-bottom: 50px;
+    }
+    .toogleProduct{
+        background-color: #E8F3F1;
+        border-radius: 30px;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        
+        @media(max-width: 767px){
+            padding: 10px 15px;
+        }
+        .productTitle{
+            h8{
+                font-size: 14px !important;
+                font-family: $avenir-heavy;
+                color: $dark-green;
+            }
+            p{
+                font-size: 14px !important;
+                font-family: $avenir-light;
+                color: $black;
+                margin: 0 !important;
+            }
+            @media (max-width: 767px){
+                line-height: 17px;
+            }
+        }
+        .addremoveToogle{
+            background-color: #6BC1B2;
+            border-radius: 30px;
+            padding: 10px 35px;
+            cursor: pointer;
+            color: $white;
+            font-size: 12px;
+            font-family: $avenir-black;
+            
+            @media(max-width: 767px){
+                display: none;
+            }
+        }
+        .addremoveToogle.hideB{
+            display: none;
+            
+            @media (max-width: 767px){
+                display: block;
+                padding: 5px 15px;
+            }
+        }
+    }
+}
+
+.testaBooked{
+    background-color: $dark-green !important;
+}
+
+.tabButton{
+    margin-top: 50px;
+    .nextTab{
+        background-color: $black;
+        color: $white !important;
+        padding: 10px 35px;
+        border-radius: 30px;
+        font-size: 12px;
+        font-family: $avenir-black;
+    }
+    .nextTab:hover{
+        background-color: $dark-green;
+    }
+    @media(max-width: $break-large){
+        text-align: center;
+    }
+}
+
+.bookingSummary-box{
+    .bookingSummary-title{
+        padding: 30px;
+        border: 2px solid $dark-green;
+        border-radius: 30px 30px 0 0;
+        background-color: $dark-green;
+        h3{
+            margin: 0 !important;
+            color: #fff !important;
+            font-size: 30px !important;
+            font-family: $starling;
+            font-weight: bold;
+            
+            @media (max-width: 767px){
+                font-size: 20px !important;
+                text-align: center;
+            }
+        }
+    }
+    .productBooked:not(:last-child){
+        border-radius: 0 0 0 0;
+        border-bottom: none;
+    }
+    .productBooked{
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        border: 2px solid $dark-green;
+        border-radius: 0 0 30px 30px;
+        .productRemove{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            h2{
+                margin: 0 !important;
+                font-size: 30px !important;
+            }
+        }
+    }
+}
+
+/** datetimetab **/
+#datetimePanel{
+    .tabList{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @media(max-width: $break-large){
+            width: 100%;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        @media(max-width: 767px){
+            padding-left: 30px;
+            padding-right: 30px;
+            .tabTitle{
+                display: none;
+            }
+        }
+        .active{
+            .imagebox{
+                background-color: $dark-green !important;
+            }
+        }
+        .imagebox{
+            background-color: #D2E8E4;
+            height: 75px;
+            width: 75px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            img{
+                width: auto;
+                height: 54px;
+            }
+        }
+        
+        .tabTitle{
+            h7{
+                font-family: $avenir-black;
+                color: $dark-green;
+            }
+        }
+    }
+}
+
+
+.appointmentColumn{
+    .productBooked{
+        p{
+            margin-bottom: 0 !important;
+        }
+    }
+    .appointmentDate{
+        width: 100%;
+        border-radius: 30px;
+        border-color: $dark-green;
+        padding: 0 15px;
+        height: 50px;
+        text-transform: uppercase;
+    }
+    .appointmentTime{
+        width: 100%;
+        border-radius: 30px;
+        border-color: $dark-green;
+        padding: 0 15px;
+        height: 50px;
+        text-transform: uppercase;
+    }
+}
+
+.datetimeTab{
+    width: 1414px;
+    max-width: 100%;
+    margin: auto;
+    
+    @media(max-width: $break-large){
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+        .appointmentColumn,
+        .timedateSummary{
+            width: 100% !important
+        }
+    }
+    @media (max-width: 767px){
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        .tabList{
+            width: 100% !important;
+            justify-content: space-between !important;
+        }
+    }
+    
+    
+    .bookingSummary-title{
+        h6{
+            color: #A6D2CA !important;
+            font-size: 12px !important;
+            font-family: $avenir-black !important;
+            margin: 0 !important;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+    
+    .productBooked:last-child{
+        background-color: #E8F3F1;
+    }
+    .productBooked{
+        .bookedConditions{
+            width: 100%;
+            .condition{
+                display: flex;
+                input{
+                    margin-top: 7px;
+                    border-color: $dark-green;
+                }
+                p{
+                    margin-bottom: 10px !important;
+                }
+            }
+        }
+    }
+    .bookingSummary-button{
+        text-align: right;
+        margin-top: 20px !important;
+    }
+    .mobileButton{
+        display: none;
+        
+        @media (max-width: $break-large){
+            display: block;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .desktopButton{
+        @media (max-width: $break-large){
+            display: none;
+        }
+    }
+}
+
+
+#confirmationTab{
+    .tabList{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        @media (max-width: $break-large){
+            width: 100%;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        @media (max-width: 767px){
+            padding-left: 30px;
+            padding-right: 30px;
+            .tabTitle{
+                display: none;
+            }
+        }
+        .active{
+            .imagebox{
+                background-color: $dark-green !important;
+            }
+        }
+        .imagebox{
+            background-color: #D2E8E4;
+            height: 75px;
+            width: 75px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            img{
+                width: auto;
+                height: 54px;
+            }
+        }
+        
+        .tabTitle{
+            h7{
+                font-family: $avenir-black;
+                color: $dark-green;
+            }
+        }
+    }
+}
+
+.confirmationTab{
+    width: 1414px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: $break-large){
+        width: 100%;
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+    }
+    
+    @media (max-width: $break-large){
+        .confirmationTitle h2,
+        .confirmationSubtitle h6{
+            text-align: center !important;
+        }
+    }
+    @media (max-width: 767px){
+        .confirmationTitle{
+            h2{
+                font-size: 20px !important;
+            }
+        }
+        .confirmationSubtitle{
+            h6{
+                font-size: 14px !important;
+            }
+        }
+    }
+    
+    .bookingSummary-title{
+        @media (max-width: 767px){
+            h3{
+                text-align: center !important;
+                font-size: 20px !important;
+            }
+        }
+    }
+    
+    @media (max-width: $break-large){
+        .confirmationColumn-text,
+        .confirmationColumn-summary{
+            width: 100% !important;
+        }
+    }
+    
+    .mobileButton{
+        display: none;
+        margin-top: 60px;
+        @media (max-width: $break-large){
+            display: block;
+        }
+    }
+    .desktopButton{
+        @media (max-width: $break-large){
+            display: none;
+        }
+    }
+}
+
+.datetimeSpecial-tab{
+    display: none;
+}
+.confirmationSpecial-tab{
+    display: none;
+}
+
+
+
+.page-id-1521.fusion-body{
+    .popover{
+        padding: 25px !important;
+        width: 290px !important;
+        h3{
+            font-size: 12px !important;
+            background-color: $white !important;
+            border: none !important;
+            color: $dark-green;
+            font-family: $avenir-black;
+            text-transform: uppercase;
+        }
+        .popover-content{
+            font-size: 12px !important;
+            font-family: $avenir-book;
+            color: $black;
+        }
+    }
+    
+    .fusion-layout-column.popupTextcolumn{
+        @media (max-width: 767px){
+            width: 60% !important;
+            max-width: 90% !important;
+            text-align: right;
+        }
+    }
+    .fusion-layout-column.popupImagecolumn{
+        @media (max-width: 767px){
+            width: 10% !important;
+        }
+    }
+    
+    .fusion-layout-column.reactionText-column{
+        @media (max-width: 767px){
+            width: 75% !important;
+            max-width: 90% !important;
+            h3{
+                text-align: right;
+                font-size: 20px !important;
+            }
+        }
+        @media (max-width: 399px){
+            width: 85% !important;
+        }
+    }
+    .fusion-layout-column.reactionImage-column{
+        @media (max-width: 767px){
+            width: 5% !important;
+            padding-top: 20px !important;
+        }
+    }
+}

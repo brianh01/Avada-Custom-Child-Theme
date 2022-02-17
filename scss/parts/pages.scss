@@ -1,0 +1,3513 @@
+/* Book Now */
+.booking-form{
+
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
+    }
+
+    margin-top:-91px;
+    padding-top:91px;
+    .tab-header{
+        background:#E8F3F1;
+        padding:80px 30px 64px;
+
+        @media screen and (max-width: $break-small) {
+            padding:47px 30px;
+        }
+
+        .steps{
+            max-width:770px;
+            width:100%;
+            margin:0 auto;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+
+            .step-item{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+                position:relative;
+                width:125px;
+                background:#E8F3F1;
+
+                @media screen and (max-width: $break-small) {
+                    width:80px;
+                }
+
+                &:after{
+                    display:block;
+                    content:"";
+                    height:2px;
+                    width:200%;
+                    background:$light-green;
+                    position:absolute;
+                    top:0;
+                    bottom:0;
+                    right:100%;
+                    margin:auto;
+
+                    @media screen and (max-width: $break-tablet) {
+                        width:100%;
+                    }
+
+                }
+
+                &:first-child{
+                    &:after{
+                        display:none;
+                    }
+                }
+
+
+
+                .icon{
+                    width:75px;
+                    height:75px;
+                    background-color:#D2E8E4;
+                    background-position:center center;
+                    background-repeat: no-repeat;
+                    border-radius:15px;
+                    margin:0 0 15px;
+                    position:relative;
+
+                    @media screen and (max-width: $break-small) {
+                        width:47px;
+                        height:47px;
+                        background-size:30px auto;
+                        margin:0;
+                    }
+
+                    &:before{
+                        content:"";
+                        display:none;
+                        width:5px;
+                        height:5px;
+                        background:$dark-green;
+                        position:absolute;
+                        top: -30px;
+                        left:0;
+                        right:0;
+                        margin:auto;
+                        border-radius:20px;
+
+                        @media screen and (max-width: $break-small) {
+                            top:-15px;
+                        }
+                    }
+                }
+
+                p{
+                    font-size:12px;
+                    line-height:1;
+                    text-transform:uppercase;
+                    font-family:$avenir-black;
+                    margin:0;
+                    color:$dark-green;
+
+                    @media screen and (max-width: $break-small) {
+                        display:none;
+                    }
+                }
+
+                 &:nth-child(1){
+                    z-index:3;
+                    .icon{
+                        background-image:url(/wp-content/uploads/2020/05/makeup@2x.png);
+                    }
+                }
+                &:nth-child(2){
+                    z-index:2;
+                    .icon{
+                        background-image:url(/wp-content/uploads/2020/05/calendar@2x.png);
+                    }
+
+                    &.done,
+                    &.current{
+                        .icon{
+                            background-image:url(/wp-content/uploads/2020/05/calendar-2@2x.png);
+                        }
+                    }
+
+                }
+                &:nth-child(3){
+                    z-index:1;
+                    .icon{
+                        background-image:url(/wp-content/uploads/2020/05/mail-1@2x.png);
+                    }
+                    &.done,
+                    &.current{
+                        .icon{
+                            background-image:url(/wp-content/uploads/2020/06/mail.png);
+                        }
+                    }
+                }
+
+                &.done{
+                    .icon{
+                        background-color:$dark-green;
+                    }
+
+                    &:after{
+                        background:$dark-green;
+                    }
+                }
+                &.current{
+                    .icon{
+                        background-color:$dark-green;
+
+                        &:before{
+                            display:block;
+                        }
+                    }
+
+                    &:after{
+                        background:$dark-green;
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-contents{
+        padding:106px 30px;
+        background:$white;
+
+        @media screen and (max-width: $break-tablet) {
+            padding:60px 55px;
+        }
+
+        @media screen and (max-width: $break-sm-medium) {
+            padding:30px;
+        }
+
+        @media screen and (max-width: $break-small) {
+            padding:30px 0;
+        }
+
+
+        .form-tab{
+            display:flex;
+            flex-wrap: wrap;
+
+            .booking-info{
+                width:65%;
+                padding:0 134px 0 0;
+                display:flex;
+                align-items:center;
+
+                @media screen and (max-width: $break-tablet) {
+                    width:100%;
+                    margin:0 0 30px;
+                    padding:0;
+                }
+
+                button.back,
+                button.next{
+                	background:$black;
+                	padding:10px 35px;
+                	border:none;
+                	border-radius:30px;
+                	text-transform:uppercase;
+                	color:$white;
+                	cursor:pointer;
+                	font-family:$avenir-black;
+
+                	@media screen and (max-width: $break-tablet) {
+                	    display:none!important;
+                	}
+                }
+
+                .tab-content{
+                    width:100%;
+
+                    &#tab-3{
+                        @media screen and (max-width: $break-small) {
+                            padding:0 30px;
+                        }
+                    }
+
+                    &#tab-2{
+                        @media screen and (max-width: $break-small) {
+                            .tab-wrapper{
+                                div{
+                                    &:last-child{
+                                        border:none;
+                                        padding:0 30px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &#tab-1{
+                        counter-reset: item-counter;
+
+                    	.tab-item{
+                    	    counter-increment:  item-counter;
+
+                        	> h3{
+                        	    &:before{
+                                	content: counter(item-counter, decimal-leading-zero);
+                                	display:block;
+                                	font-size:12px;
+                                	line-height:1;
+                                	font-family:$avenir-book!important;
+
+                                	@media screen and (max-width: $break-small) {
+                                	    margin-bottom:10px;
+                                	}
+                                }
+                            }
+
+                        }
+                    }
+
+                    .confirmation-message{
+                        @media screen and (max-width: $break-tablet) {
+                            text-align:center;
+                        }
+                        h3{
+                            font-size:36px;
+                            line-height:49px;
+                            margin:0 0 10px;
+                            font-family:$avenir-heavy!important;
+                            color:$black;
+                        }
+                        p{
+                            font-size:18px;
+                            line-height:26px;
+                            margin:0 0 30px;
+                            font-family:$avenir-black!important;
+                            color:$dark-green;
+                            text-transform:uppercase;
+                        }
+
+                        a{
+                            font-size:12px;
+                            display:inline-block;
+                            padding:10px 35px;
+                            color:$white;
+                            background:$dark-green;
+                            border-radius:50px;
+                            text-transform:uppercase;
+                            font-family:$avenir-black!important;
+
+                            &:hover{
+                                background:$light-green;
+                            }
+
+                            @media screen and (max-width: $break-tablet) {
+                                display:none;
+                            }
+                        }
+
+                    }
+
+
+                    .tab-item{
+                        margin:0 0 60px;
+
+                        @media screen and (max-width: $break-small) {
+                            display:flex;
+                            flex-direction:column;
+                            padding:0 30px 30px;
+                            margin:0 0 30px;
+                            border-bottom:2px solid $light-green;
+                            text-align:center;
+                            align-items:center;
+
+                            > div{
+                                width:100%;
+                            }
+                        }
+
+                    	h3{
+                    	    font-size:30px;
+                        	line-height:34px;
+                        	margin:0 0 20px;
+                        	color:$black;
+                        	position:relative;
+                        	padding:0 27px 0 0;
+                        	display:inline-block;
+                        	font-family:$avenir-heavy;
+
+                        	@media screen and (max-width: $break-small) {
+                        	    font-size:20px;
+                        	    line-height:1.2;
+                        	    margin:0 0 24px;
+                        	}
+
+                        	.help{
+                            	position:absolute;
+                            	right:0;
+                            	top:21px;
+
+                            	span{
+                                	font-size:17px;
+                                	display:block;
+                                	width:20px;
+                                	height:20px;
+                                	display:flex;
+                                	align-items:center;
+                                	justify-content:center;
+                                	color:#fff;
+                                	background:#1A1818;
+                                	border-radius:100%;
+                                	cursor:pointer;
+                                }
+
+                                .help-content{
+                                	display:none;
+                                	position:absolute;
+                                	left:0;
+                                	top:100%;
+                                	width:287px;
+                                	background:#fff;
+                                	padding:25px 23px;
+                                	box-shadow: 0px 5px 10px rgba(0,0,0,.3);
+                                	margin:10px 0 0;
+                                	z-index:9999;
+
+                                	@media screen and (max-width: $break-tablet) {
+                                	    left:auto;
+                                	    right:0;
+                                	}
+
+                                	@media screen and (max-width: $break-small) {
+                                	    width:200px;
+                                	}
+
+                                	h1,h2,h3,h4,h5,h6{
+                                    	font-size:12px;
+                                    	text-transform:uppercase;
+                                    	color:#487169;
+                                    	margin:0 0 20px;
+                                    	line-height:16px;
+                                    	font-family:$avenir-black;
+                                    }
+
+                                    p{
+                                    	font-size:12px;
+                                    	color:#1A1818;
+                                    	margin:0;
+                                    	line-height:18px;
+                                    	font-family:$avenir-book;
+                                    }
+                                }
+
+                                &:hover{
+                                    .help-content{
+                                    	display:block;
+                                    }
+                                }
+                        	}
+
+                        }
+
+                        .button-list{
+                        	display:flex;
+                        	align-items:center;
+                        	flex-wrap:wrap;
+                        	margin:0 -5px;
+
+                        	button{
+                            	font-size:12px;
+                            	color:#487169;
+                            	padding:10px 25px;
+                            	border-radius:30px;
+                            	background:#D2E8E4;
+                            	border:none;
+                            	text-transform:uppercase;
+                            	margin:0 5px 10px;
+                            	cursor:pointer;
+                            	transition:all .3s;
+                            	font-family:$avenir-black;
+
+                            	@media screen and (max-width: $break-small) {
+                            	    width:100%;
+                            	}
+
+                            	&.active,
+                            	&:hover{
+                            	    background:#487169;
+	                                color:$white;
+                            	}
+                            }
+                        }
+
+                        .color-list{
+                        	display:flex;
+                        	align-items:center;
+                        	flex-wrap:wrap;
+                        	margin:0 -5px;
+
+                        	@media screen and (max-width: $break-small) {
+                        		margin:0 -3px;
+                        		justify-content:center;
+                        	}
+
+                        	button{
+                            	background:$white;
+                            	width:75px;
+                            	height:75px;
+                            	border:1px solid $black!important;
+                            	border-radius:3px;
+                            	margin:0 5px 10px;
+                            	cursor:pointer;
+                            	transition:all .3s;
+                            	position:relative;
+                            	overflow:hidden;
+                            	display:block;
+
+                            	@media screen and (max-width: $break-small) {
+                            	    width:41px;
+                            	    height:41px;
+                            	    margin:0 3px 6px;
+                            	}
+
+                            	span{
+                                	text-indent:-999999px;
+                                	display:block;
+                                	position:absolute;
+                                	top:5px;
+                                	bottom:5px;
+                                	left:5px;
+                                	right:5px;
+                                	transition:all .3s;
+
+                                }
+
+                                &:hover,
+                                &.active{
+                                    background: $black!important;
+                                }
+                            }
+                        }
+
+                        .not-listed{
+                        	margin:20px 0 0;
+                        	font-size:12px;
+                        	line-height:1;
+                        	text-transform:uppercase;
+                        	text-decoration:underline;
+                        	display:inline-block;
+                        	font-family:$avenir-black;
+                        	color:$black;
+                        	cursor:pointer;
+                        	display:inline-block;
+                        	position:relative;
+                        	padding:0 20px 0 0;
+
+                        	.help{
+                            	position:absolute;
+                            	right:0;
+                            	top:0;
+
+                            	span{
+                                	font-size:12px;
+                                	display:block;
+                                	width:12px;
+                                	height:12px;
+                                	display:flex;
+                                	align-items:center;
+                                	justify-content:center;
+                                	color:#fff;
+                                	background:#1A1818;
+                                	border-radius:100%;
+                                	cursor:pointer;
+                                }
+
+                                .help-content{
+                                	display:none;
+                                	position:absolute;
+                                	left:0;
+                                	top:100%;
+                                	width:287px;
+                                	background:#fff;
+                                	padding:25px 23px;
+                                	box-shadow: 0px 5px 10px rgba(0,0,0,.3);
+                                	margin:10px 0 0;
+                                	z-index:9999;
+
+                                	@media screen and (max-width: $break-small) {
+                                	    left:auto;
+                                	    right:0;
+                                	    width:200px;
+                                	}
+
+                                	h1,h2,h3,h4,h5,h6{
+                                    	font-size:12px;
+                                    	text-transform:uppercase;
+                                    	color:#487169;
+                                    	margin:0 0 20px;
+                                    	line-height:16px;
+                                    	font-family:$avenir-black;
+                                    }
+
+                                    p{
+                                    	font-size:12px;
+                                    	color:#1A1818;
+                                    	margin:0;
+                                    	line-height:18px;
+                                    	font-family:$avenir-book;
+                                    	text-transform:none!important;
+                                    }
+                                }
+                        	}
+
+                        	&:hover{
+                        	    .help{
+                                    .help-content{
+                                    	display:block;
+                                    }
+                                }
+                            }
+                        }
+
+                        .option-list{
+                            select{
+                            	height:50px;
+                            	width:100%;
+                            	border-radius:50px;
+                            	border:1px solid #487169;
+                            	line-height:50px;
+                            	padding:0 23px;
+                            	font-size:18px;
+                            	-webkit-appearance: none;
+                            	-moz-appearance: none;
+                            	appearance: none;
+                            	background:url(/wp-content/uploads/2020/06/select-icon.png) no-repeat 96% center;
+                            	background-size:14px auto;
+                            	cursor:pointer;
+                            }
+                        }
+
+                        .treatment-list{
+                            ul{
+                            	list-style:none;
+                            	margin:0;
+                            	padding:0;
+                            	display:none;
+
+
+                            	&.show{
+                            	    display:block;
+                            	}
+
+                            	li{
+                                	display:flex;
+                                	align-items:center;
+                                	justify-content:space-between;
+                                	padding:12px 18px 12px 29px;
+                                	background:#E8F3F1;
+                                	margin:0 0 10px;
+                                	border-radius:50px;
+                                	text-align:left;
+
+                                	p{
+                                    	font-size:14px;
+                                    	color:#1A1818;
+                                    	line-height:1;
+                                    	margin:0;
+                                    	font-family:$avenir-heavy;
+
+                                    	span{
+                                        	font-size:14px;
+                                        	color:#1A1818;
+                                        	line-height:1;
+                                        	display:block;
+                                        	font-family:$avenir-book;
+                                        }
+                                    }
+
+                                    button{
+                                    	background:#6BC1B2;
+                                    	font-size:12px;
+                                    	line-height:1;
+                                    	margin:0;
+                                    	padding:10px 25px;
+                                    	border-radius:30px;
+                                    	color:#fff;
+                                    	text-transform:uppercase;
+                                    	border:none;
+                                    	cursor:pointer;
+                                    	transition:all .3s;
+                                    	font-family:$avenir-black!important;
+
+                                    	&:hover,
+                                    	&.selected{
+                                    	    background:#487169;
+                                    	}
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        .info-list{
+                            input[type="text"],
+                            input[type="email"]{
+                                height:50px;
+                            	width:100%;
+                            	border-radius:50px;
+                            	border:1px solid #487169;
+                            	line-height:50px;
+                            	padding:0 23px;
+                            	font-size:18px;
+                            	margin:0 0 10px;
+                            }
+                        }
+
+                        .selected-list{
+                        	display:none;
+                        	&.show{
+                        	    display:block;
+                        	}
+
+                            .selected-item{
+                                padding-bottom:30px;
+                                margin-bottom:30px;
+                                display:none;
+                            	border-bottom:1px solid $black;
+
+                            	&.show{
+                            	    display:block;
+                            	}
+
+
+                                h3{
+                                    font-size:18px;
+                                    line-height:1;
+                                    margin:0 0 15px;
+                                    color:$black;
+                                    font-family:$avenir-heavy;
+                                    span{
+                                        font-family:$avenir-book;
+                                    }
+                                }
+
+                                .selected-date{
+                                    display:flex;
+                                    align-items:center;
+                                    flex-wrap:wrap;
+                                    margin:0 -18px;
+
+                                    @media screen and (max-width: $break-small) {
+                                        margin:0;
+                                    }
+
+                                    label{
+                                        font-size:18px;
+                                        line-height:1;
+                                        margin:0 0 10px;
+                                        color:$dark-green;
+                                        font-family:$avenir-heavy;
+                                        display:block;
+                                    }
+
+                                    .date,
+                                    .time{
+                                        width:50%;
+                                        padding:0 18px;
+
+                                        @media screen and (max-width: $break-small) {
+                                            width:100%;
+                                            padding:0!important;
+                                            margin:0 0 10px;
+                                        }
+                                    }
+
+                                    input[type="text"], select {
+                                        height:50px;
+                                    	width:100%;
+                                    	border-radius:50px;
+                                    	border:1px solid #487169;
+                                    	line-height:50px;
+                                    	padding:0 23px;
+                                    	font-size:18px;
+                                    	-webkit-appearance: none;
+                                    	-moz-appearance: none;
+                                    	appearance: none;
+                                    	background:url(/wp-content/uploads/2020/06/select-icon.png) no-repeat 96% center;
+                                    	background-size:14px auto;
+                                    	cursor:pointer;
+                                    }
+                                }
+                            }
+                        }
+
+                        .validation-error {
+                          margin-top: 5px;
+                          color: red;
+                        }
+                    }
+                }
+            }
+
+            .booking-sidebar{
+                width:35%;
+
+	            @media screen and (max-width: $break-tablet) {
+                    width:100%;
+
+                    .inner-wrapper-sticky{
+                        position:relative!important;
+                        left:auto!important;
+                        top:auto!important;
+                        width:100%!important;
+                        transform:none!important;
+                    }
+                }
+
+                @media screen and (max-width: $break-small) {
+                    padding:0 30px;
+                }
+
+
+
+                .mobile-form-button{
+                    display:none;
+                    align-items:center;
+                    justify-content:center;
+                    margin:60px 0 0;
+
+                    button.back,
+                    button.next{
+                    	background:$black;
+                    	padding:10px 35px;
+                    	border:none;
+                    	border-radius:30px;
+                    	text-transform:uppercase;
+                    	color:$white;
+                    	cursor:pointer;
+                    	font-family:$avenir-black;
+                    	display:none;
+
+                    }
+
+                    .home-button{
+                        font-size:12px;
+                        display:none;
+                        padding:10px 35px;
+                        color:$white;
+                        background:$dark-green;
+                        border-radius:50px;
+                        text-transform:uppercase;
+                        font-family:$avenir-black!important;
+
+                        &:hover{
+                            background:$light-green;
+                        }
+                    }
+
+                    @media screen and (max-width: $break-tablet) {
+                	    display:flex;
+
+                        button.next{
+                            display:block;
+                        }
+                    }
+                }
+
+	            .booking-summary{
+	                border:2px solid #487169;
+                	border-radius:30px;
+                	overflow:hidden;
+
+                	.summary-header{
+                    	padding:30px;
+                    	background:#487169;
+
+                    	h3{
+                        	font-size:30px;
+                        	line-height:1;
+                        	margin:0;
+                        	color:$white;
+                        	font-family:$starling;
+                        }
+
+                        a{
+                            font-size:12px;
+                            line-height:1;
+                            margin:5px 0 0;
+                            color:#A6D2CA;
+                            text-transform:uppercase;
+                            text-decoration:underline;
+                            display:inline-block;
+                            font-family:$avenir-book;
+                        }
+                    }
+                    .summary-content{
+                        min-height:92.5px;
+                        position:relative;
+
+                        > .summary-item{
+                            display:flex!important;
+                            position:absolute;
+                            left:0;
+                            right:0;
+                            top:0;
+                        }
+
+                        .summary-list{
+                            display:none;
+                            position:relative;
+                            z-index:1;
+                            &.show{
+                                display:block;
+                            }
+                        }
+                        .summary-item{
+                        	padding:30px;
+                        	border-top:1px solid #487169;
+                        	display:none;
+                        	align-items:center;
+                        	justify-content:space-between;
+                        	background:$white;
+
+                        	&.show{
+                        	    display:flex;
+                        	}
+
+                            .content{
+                                h6{
+                                	margin:0 0 5px;
+                                	font-size:12px;
+                                	color:#487169;
+                                	line-height:1;
+                                	text-transform:uppercase;
+                                	font-family:$avenir-black;
+                                }
+
+                                p{
+                                    margin:0;
+                                    font-size:14px;
+                                    color:$black;
+                                    line-height:1;
+                                    text-transform:uppercase;
+                                    font-family:$avenir-heavy;
+
+                                    span{
+                                        font-family:$avenir-book;
+                                    }
+                                }
+                            }
+
+                            .remove{
+                                text-indent:-999999px;
+                            	padding:0;
+                            	margin:0;
+                            	border:none;
+                            	font-size:20px;
+                            	cursor:pointer;
+                            	width:18px;
+                            	height:18px;
+                            	background:url(/wp-content/uploads/2020/06/close-icon.png) no-repeat center center!important;
+                            	background-size:cover!important;
+                            }
+                        }
+                    }
+
+                    .summary-footer{
+                    	padding:30px;
+                    	background:#D2E8E4;
+                    	display:flex;
+                    	flex-wrap:wrap;
+                    	justify-content:flex-end;
+
+                    	.confirmation{
+                        	margin:0 0 40px;
+                        	width:100%;
+
+                        	label{
+                            	display:block;
+                            	margin:0 0 30px;
+                            	color:#487169;
+                            	font-size:12px;
+                            	text-transform:uppercase;
+                            	font-family:$avenir-black;
+                            	cursor:pointer;
+
+                            	input{
+                            	    margin:0 15px 0 0;
+                            	}
+
+                            	a{
+                            	    text-decoration:underline;
+                            	}
+                            }
+                        }
+
+                        .book-now{
+                        	background:$black;
+                        	padding:10px 35px;
+                        	border:none;
+                        	border-radius:30px;
+                        	text-transform:uppercase;
+                        	color:$white;
+                        	cursor:pointer;
+                        	font-family:$avenir-black;
+                        }
+                    }
+	            }
+            }
+        }
+    }
+
+}
+
+
+/* Home */
+body:not(.home){
+    .avada-page-titlebar-wrapper {
+        .fusion-page-title-row {
+            .fusion-page-title-wrapper {
+                .fusion-page-title-captions {
+                    .default-btn {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.home {
+    .avada-page-titlebar-wrapper {
+        position: relative;
+
+        &:before {
+            content: '';
+            background: $light-green;
+            position: absolute;
+            top: -470px;
+            left: -150px;
+            width: 975px;
+            height: 976px;
+            border-radius: 50%;
+
+            @media screen and (max-width: $break-medium) {
+                top: 70px;
+                left: -60px;
+                width: 415px;
+                height: 415px;
+            }
+            @media screen and (max-width: $break-small) {
+                top: -70px;
+                left: -60px;
+                width: 255px;
+                height: 255px;
+            }
+        }
+        .fusion-page-title-row {
+            .fusion-page-title-wrapper {
+                .fusion-page-title-captions {
+                    h3 {
+                        margin-bottom: 30px;
+                    }
+                    .default-btn {
+                        @media screen and (max-width: $break-small) {
+                            display: table !important;
+                            margin: 0 auto !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #ready-to-book-appoinment {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        @media screen and (max-width: 991px) {
+            background: transparent !important;
+        }
+
+        .fusion-builder-row {
+            position: relative;
+
+            @media screen and (max-width: $break-medium) {
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                height: 710px;
+                padding-bottom: 140px;
+                padding-top: 90px;
+            }
+            @media screen and (max-width: $break-small) {
+                padding-bottom: 0;
+                padding-top: 0;
+                height: 460px;
+            }
+
+            .bg-col-image {
+                .fusion-column-wrapper {
+                    clip-path: ellipse(90% 115% at 7% 50%);
+
+                    @media screen and (max-width: $break-medium) {
+                        clip-path: unset !important;
+                        padding: 0 !important;
+                        height: 600px !important;
+                        width: 600px !important;
+                        border-radius: 50%;
+                        position: absolute;
+                        bottom: -170px;
+                        right: -120px;
+                    }
+                    @media screen and (max-width: 768px) {
+                        height: 510px !important;
+                        width: 510px !important;
+                        bottom: -80px;
+                        right: -150px;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        height: 350px !important;
+                        width: 350px !important;
+                        top: -40px;
+                        right: -240px;
+                        bottom: initial;
+                    }
+                    @media screen and (max-width: $break-extra-small) {
+                        bottom: 100px;
+                        right: -270px;
+                    }
+                    @media screen and (max-width: 320px) {
+                        display: none;
+                    }
+                }
+            }
+            .fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    z-index: 9;
+                    position: absolute;
+                    right: 50px;
+                }
+                .fusion-column-wrapper {
+                    @media screen and (max-width: $break-medium) {
+
+                    }
+                }
+            }
+            .fusion-column-last {
+                @media screen and (max-width: $break-medium) {
+                    background: #e8f3f1 !important;
+                    width: 700px !important;
+                    height: 700px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: -110px;
+                }
+                @media screen and (max-width: $break-small) {
+                    width: 560px !important;
+                    height: 560px;
+                }
+                @media screen and (max-width: 320px) {
+                    position: relative;
+                    left: initial;
+                }
+
+                .fusion-column-wrapper {
+
+                    @media screen and (max-width: $break-medium) {
+                        padding-right: 0 !important;
+                    }
+
+                    .headline {
+                        max-width: 480px;
+
+                        @media screen and (max-width: $break-small) {
+                            max-width: 180px;
+                        }
+                        @media screen and (max-width: 320px) {
+                            max-width: 230px;
+                        }
+
+                        h3 {
+                            @media screen and (max-width: $break-small) {
+                                font-size: 20px !important;
+                                line-height: 28px !important;
+                            }
+                        }
+                    }
+                    .subheadline {
+                        max-width: 480px;
+
+                        @media screen and (max-width: $break-medium) {
+                            max-width: 380px;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            max-width: 190px;
+                        }
+                        @media screen and (max-width: 320px) {
+                            max-width: 260px;
+                        }
+
+                        h6 {
+                            @media screen and (max-width: $break-small) {
+                                font-size: 14px !important;
+                                line-height: 22px !important;
+                                letter-spacing: 1.4px !important;
+                            }
+                        }
+                    }
+                    .secure-checkout {
+                        p {
+                            margin: 20px 0 0;
+                            font-size: 12px;
+
+                            &:nth-child(2) {
+                                margin-top: 0 !important;
+                            }
+                        }
+                        img:nth-child(2) {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #about-us {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 0 !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-top: 0 !important;
+        }
+
+        .fusion-row {
+            max-width: 1094px;
+
+            @media screen and (max-width: $break-medium) {
+                max-width: 100%;
+            }
+
+            .fusion-layout-column {
+                &.fusion-column-first {
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 35px !important;
+                    }
+                }
+                .fusion-column-wrapper {
+                    .fusion-title {
+                        &.headline {
+                            @media screen and (max-width: $break-medium) {
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                        &.subheadline {
+                            @media screen and (max-width: $break-medium) {
+                                margin-bottom: 15px !important;
+                            }
+                        }
+                        h3 {
+                            @media screen and (max-width: $break-medium) {
+                                text-align: center !important;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                font-size: 20px !important;
+                            }
+                        }
+                        h6 {
+                            @media screen and (max-width: $break-medium) {
+                                text-align: center !important;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                font-size: 14px !important;
+                                letter-spacing: 1.4px !important;
+                            }
+                        }
+                    }
+                    .fusion-text {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                    .default-btn {
+                        @media screen and (max-width: $break-medium) {
+                            margin: 0 auto;
+                            display: table;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #skin-services {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        > .fusion-builder-row {
+            > .fusion-layout-column {
+                margin-bottom: 50px !important;
+
+                @media screen and (max-width: $break-medium) {
+                    margin-top: 0 !important;
+                }
+
+                &:nth-child(5) {
+                    @media screen and (max-width: $break-medium) {
+                        display: none;
+                    }
+                }
+
+                &.no-content {
+                    > .fusion-column-wrapper {
+                        min-height: auto !important;
+                    }
+                }
+
+                .fusion-title {
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 0 !important;
+                        margin-top: 0 !important;
+                    }
+
+                    h2 {
+                        @media screen and (max-width: $break-small) {
+                           text-align: center !important;
+                           font-size: 24px !important;
+                           line-height: 29px !important;
+                        }
+                    }
+                    h3 {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                            margin-bottom: 10px !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 50px !important;
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                    h6 {
+                        @media screen and (max-width: $break-small) {
+                            display: none !important;
+                        }
+                    }
+                }
+                &.normal-height {
+                    .fusion-button-wrapper {
+                        @media screen and (max-width: $break-medium) {
+                            float: none !important;
+                        }
+                        .fusion-button {
+                            @media screen and (max-width: $break-medium) {
+                                margin: 0 auto;
+                                display: table !important;
+                            }
+                        }
+                    }
+                }
+
+                > .fusion-column-wrapper {
+                    position: relative;
+
+                    @media screen and (max-width: $break-small) {
+                        padding-left: 10px !important;
+                        padding-right: 10px !important;
+                    }
+
+                    .line-sep {
+                        background: #487169;
+                        height: 318px;
+                        width: 2px;
+                        position: absolute;
+                        top: 30px;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                    }
+                    
+                    .fusion-button {
+                        border-radius: 0 !important;
+                        height: 91px !important;
+                        font-size: 12px !important;
+                        letter-spacing: 1.2px !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @media screen and (max-width: $break-small) {
+                            height: 60px !important;
+                        }
+
+                        &.light-bg {
+                            background: $light-green !important;
+                        }
+
+                        &:hover {
+                            background: $white !important;
+                        }
+                    }
+
+                    > .fusion-builder-row {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+
+                        @media screen and (max-width: $break-medium) {
+                            display: flex;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            display: block;
+                        }
+
+                        .fusion-layout-column {
+                            margin-bottom: 0 !important;
+                            
+                            .fusion-button {
+                                border-radius: 0 !important;
+                                height: 91px !important;
+                                font-size: 12px !important;
+                                letter-spacing: 1.2px !important;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                @media screen and (max-width: $break-small) {
+                                    height: 60px !important;
+                                }
+
+                                &.light-bg {
+                                    background: $light-green !important;
+                                }
+
+                                &:hover {
+                                    background: $white !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* end Home */
+
+/* Contact Us */
+.page-id-371 {
+    .avada-page-titlebar-wrapper {
+        .fusion-page-title-bar {
+            @media screen and (max-width: $break-medium) {
+                height: 275px !important;
+                min-height: auto !important;
+            }
+            .fusion-page-title-row {
+                @media screen and (max-width: $break-medium) {
+                    height: 275px !important;
+                    min-height: auto !important;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-1 {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-content-boxes {
+            margin-bottom: 0 !important;
+
+            .fusion-column {
+                @media screen and (max-width: $break-medium) {
+                    float: left !important;
+                    width: 33.33% !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    float: none !important;
+                    width: 100% !important;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+                .col {
+                    @media screen and (max-width: $break-small) {
+                        text-align: left;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .fusion-clearfix {
+                        @media screen and (max-width: $break-small) {
+                            display: none !important;
+                        }
+                    }
+                    .heading {
+                        @media screen and (max-width: $break-small) {
+                            display: flex;
+                            align-items: center;
+                            margin: 0;
+                        }
+                        .icon {
+                            @media screen and (max-width: $break-small) {
+                                width: 25px !important;
+                            }
+                            i {
+
+                                @media screen and (max-width: $break-small) {
+                                    font-size: 25px !important;
+                                }
+                            }
+                            @media screen and (max-width: $break-small) {
+                                margin-bottom: 0;
+                                margin-right: 20px;
+                            }
+                        }
+                        h6 {
+                            @media screen and (max-width: $break-small) {
+                                margin-bottom: 0;
+                                margin-right: 6px;
+                                font-size: 14px !important;
+                                letter-spacing: 1.4px !important;
+                            }
+                        }
+                    }
+                    .content-container {
+                        @media screen and (max-width: $break-small) {
+                            margin-bottom: 0 !important;
+                            text-align: left !important;
+                            width: 65% !important;
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-title {
+            @media screen and (max-width: $break-medium) {
+                margin-bottom: 0px !important;
+            }
+            h3 {
+                @media screen and (max-width: $break-medium) {
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 20px !important;
+                    line-height: 50px !important;
+                }
+            }
+            h6 {
+                @media screen and (max-width: $break-medium) {
+                    text-align: center !important;
+                    margin-bottom: 25px !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                    letter-spacing: 1.4px !important;
+                }
+            }
+        }
+
+    }
+    .wpcf7-form {
+        input[type="text"].wpcf7-form-control,
+        input[type="email"].wpcf7-form-control,
+        input[type="tel"].wpcf7-form-control {
+            border: 0 none !important;
+            margin-bottom: 6px;
+
+            @media screen and (max-width: $break-medium) {
+                border: 1px solid #487169 !important;
+            }
+        }
+        textarea {
+            border: 0 none !important;
+            margin-bottom: 30px;
+
+            @media screen and (max-width: $break-medium) {
+                border: 1px solid #487169 !important;
+            }
+        }
+        .wpcf7-submit.default-btn {
+            min-width: 121px !important;
+
+            @media screen and (max-width: $break-medium) {
+                display: table !important;
+                margin: 0 auto !important;
+            }
+        }
+    }
+}
+/* end Contact Us */
+
+/* Testimonial */
+.page-id-386 {
+    .avada-page-titlebar-wrapper {
+        .fusion-page-title-bar {
+            @media screen and (max-width: $break-medium) {
+                height: 275px !important;
+                min-height: auto !important;
+            }
+            .fusion-page-title-row {
+                @media screen and (max-width: $break-medium) {
+                    height: 275px !important;
+                    min-height: auto !important;
+                }
+            }
+        }
+    }
+    #testi-first-sec {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+            padding-top: 50px !important;
+            padding-bottom: 190px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-row {
+            .fusion-layout-column {
+                &.fusion-column-first {
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 120px !important;
+                    }
+
+                    .fusion-title {
+                        h3 {
+                            @media screen and (max-width: $break-medium) {
+                                text-align: center !important;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                font-size: 20px !important;
+                                line-height: 28px !important;
+                            }
+                        }
+                        h6 {
+                            @media screen and (max-width: $break-medium) {
+                                text-align: center !important;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                font-size: 14px !important;
+                                line-height: 18px !important;
+                                letter-spacing: 1.4px !important;
+                            }
+                        }
+                    }
+                    .fusion-text {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                    .fusion-button-wrapper {
+                        @media screen and (max-width: $break-medium) {
+                            float: none !important;
+                        }
+
+                        .fusion-button {
+                            @media screen and (max-width: $break-medium) {
+                                display: table !important;
+                                margin: 0 auto !important;
+                            }
+                        }
+                    }
+                }
+                &.fusion-column-last {
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        width: 438px;
+                        height: 382px;
+                        background: #e8f3f1;
+                        position: absolute;
+                        top: -50px;
+                        right: 0;
+                        z-index: -1;
+
+                        @media screen and (max-width: $break-medium) {
+                            width: 668px;
+                            right: -120px;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            right: -420px;
+                        }
+                    }
+
+                    .testimonial-slider {
+                        width: 550px;
+
+                        @media screen and (max-width: 1024px) {
+                            width: 500px;
+                        }
+                        @media screen and (max-width: $break-medium) {
+                            width: 100% !important;
+                        }
+
+                        .slick-slide {
+                            width: 550px;
+
+                            @media screen and (max-width: 1024px) {
+                                width: 500px;
+                            }
+
+                            .testimonial-text {
+                                color: $dark-green;
+                                font-size: 50px;
+                                font-family: $starling !important;
+                                font-weight: bold;
+                                margin-bottom: 10px;
+
+                                @media screen and (max-width: $break-small) {
+                                    font-size: 24px !important;
+                                    line-height: 32px !important;
+                                }
+                            }
+                        }
+                        .slick-dots {
+                            text-align: left !important;
+                            li {
+                                &.slick-active {
+                                    button {
+                                        &:before {
+                                            color: $dark-green !important;
+                                        }
+                                    }
+                                }
+                                button {
+                                    &:before {
+                                        color: $light-green !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #testi-col {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+        .fusion-row {
+            > .fusion-layout-column {
+                > .fusion-column-wrapper {
+                    .fusion-builder-row {
+                        &:nth-child(1) {
+                            @media screen and (max-width: $break-medium) {
+                                display: flex;
+                            }
+                            .fusion-column-first {
+                                @media screen and (max-width: $break-medium) {
+                                    width: 30% !important;
+                                }
+                                @media screen and (max-width: $break-small) {
+                                    width: 60% !important;
+                                }
+                                @media screen and (max-width: $break-extra-small) {
+                                    width: 30% !important;
+                                }
+
+                                .fusion-text {
+                                    max-width: 230px;
+                                    float: right;
+
+                                    @media screen and (max-width: $break-medium) {
+                                        max-width: 100%;
+                                    }
+                                    @media screen and (max-width: $break-small) {
+                                        font-size: 14px !important;;
+                                        line-height: 22px !important;
+                                    }
+                                }
+                            }
+                            .fusion-column-last {
+                                @media screen and (max-width: $break-extra-small) {
+                                    padding-left: 20px !important;
+                                }
+                                .tablet-quote {
+                                    display: none;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    @media screen and (max-width: $break-medium) {
+                                        display: flex;
+                                    }
+                                    @media screen and (max-width: $break-small) {
+                                        display: none;
+                                    }
+                                    img {
+                                        width: 56px;
+                                    }
+                                    .testi-author-name {
+                                        p {
+                                            margin: 0 !important;
+                                            font-family: $avenir-black !important;
+                                            color: $dark-green !important;
+                                            font-size: 18px;
+                                            line-height: 26px;
+                                            letter-spacing: 1.8px;
+                                            text-transform: uppercase;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            @media screen and (max-width: $break-medium) {
+                                display: none;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                display: flex;
+                            }
+
+                            .fusion-column-last {
+                                .testi-author-name {
+                                    p {
+                                        margin: 0 !important;
+                                        font-family: $avenir-black !important;
+                                        color: $dark-green !important;
+                                        font-size: 18px;
+                                        line-height: 26px;
+                                        letter-spacing: 1.8px;
+                                        text-align: right;
+
+                                        @media screen and (max-width: $break-small) {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                            letter-spacing: 1.4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Testimonial */
+
+/* Skin Treatments */
+.page-id-492 {
+    .fusion-builder-row-1 {
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+            padding-top: 50px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-title {
+            @media screen and (max-width: $break-medium) {
+                margin-bottom: 0;
+            }
+
+            h3 {
+                @media screen and (max-width: $break-medium) {
+                    font-size: 36px !important;
+                    line-height: 50px !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 20px !important;
+                    line-height: 28px !important;
+                }
+            }
+            h6 {
+                @media screen and (max-width: $break-medium) {
+                    max-width: 500px;
+                    margin: 0 auto !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    letter-spacing: 1.4px !important;
+                    line-height: 18px !important;
+                }
+            }
+        }
+    }
+    .skin-treatments-col {
+        position: relative;
+
+        &:after {
+            content: '';
+            background: #487169;
+            position: absolute;
+            width: 2px;
+            height: 90px;
+            top: 3px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .fusion-builder-row {
+            @media screen and (max-width: $break-medium) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            @media screen and (max-width: $break-small) {
+                display: block;
+            }
+            .fusion-layout-column {
+                @media screen and (max-width: $break-medium) {
+                    width: 50% !important;
+                    padding: 0 30px !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    width: 100% !important;
+                    padding: 0 !important;
+                }
+
+                .fusion-title {
+                    h4 {
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 20px !important;
+                            text-align: center;
+                        }
+                    }
+                }
+                .fusion-text {
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 22px !important;
+                        text-align: center;
+                    }
+                }
+                .fusion-button-wrapper {
+                    @media screen and (max-width: $break-small) {
+                        float: none !important;
+                    }
+                    .fusion-button {
+                        @media screen and (max-width: $break-small) {
+                            display: table !important;
+                            margin: 0 auto !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .fusion-builder-row-3 {
+        .fusion-builder-row {
+            @media screen and (max-width: $break-medium) {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            @media screen and (max-width: $break-small) {
+                display: block;
+            }
+            .fusion-layout-column {
+                @media screen and (max-width: $break-medium) {
+                    width: 33.33% !important;
+                }
+                @media screen and (max-width: 767px) {
+                    width: 100% !important;
+                    margin-bottom: 5px !important;
+                }
+
+                .fusion-column-wrapper {
+                    @media screen and (max-width: $break-medium) {
+                        padding: 30px !important;
+                    }
+                    .fusion-imageframe {
+                        @media screen and (max-width: $break-medium) {
+                            display: table !important;
+                            margin: 0 auto !important;
+                        }
+                    }
+                    .fusion-title {
+                        h3 {
+                            @media screen and (max-width: $break-medium) {
+                                font-size: 18px !important;
+                                line-height: 46px !important;
+                                text-align: center;
+                            }
+                            @media screen and (max-width: $break-small) {
+                                font-size: 20px !important;
+                            }
+                        }
+                    }
+                    .fusion-text {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center;
+                        }
+                        @media screen and (max-width: $break-medium) {
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                    .fusion-button-wrapper {
+                        @media screen and (max-width: $break-medium) {
+                            float: none !important;
+                        }
+                        .fusion-button {
+                            @media screen and (max-width: $break-medium) {
+                                display: table !important;
+                                margin: 0 auto !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* end Skin Treatments */
+
+/* Acne Treatments */
+
+/* Acne Scarring */
+.page-id-581 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Acne Scarring */
+
+/* Acne Treatments */
+.page-id-588 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Acne Treatments */
+
+/* Microdermabrasion */
+.page-id-674 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Microdermabrasion */
+
+/* Pigmentation Removal */
+.page-id-827 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Pigmentation Removal */
+
+/* Skin Tightening */
+.page-id-677 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Skin Tightening */
+
+/* LED Light Therapy */
+.page-id-837 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end LED Light Therapy */
+
+/* Cosmetic Grade Peels */
+.page-id-845 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Cosmetic Grade Peels */
+
+/* Capillary Reduction */
+.page-id-854 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Capillary Reduction */
+
+/* Fractional RF */
+.page-id-864 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    float: none !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+
+        .fusion-imageframe {
+            @media screen and (max-width: $break-medium) {
+
+            }
+        }
+    }
+}
+/* end Capillary Reduction */
+
+/* Injectables */
+.page-id-872 {
+    @media screen and (max-width: $break-medium) {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+    }
+    @media screen and (max-width: $break-small) {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .fusion-builder-row-1 {
+        .fusion-layout-column {
+            .fusion-column-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    min-height: auto !important;
+                    height: auto !important;
+                }
+                .fusion-title {
+                    h3 {
+                        @media screen and (max-width: $break-medium) {
+                            font-size: 36px !important;
+                            line-height: 50px !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 28px !important;
+                        }
+                    }
+                    h6 {
+                        @media screen and (max-width: $break-small) {
+                            font-size: 14px !important;
+                            line-height: 18px !important;
+                            letter-spacing: 1.4px !important;
+                            margin-bottom: 20px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        &:after {
+            content: '';
+            background: #487169;
+            position: absolute;
+            width: 2px;
+            height: 90px;
+            top: 3px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        > .fusion-builder-row {
+            max-width: 924px !important;
+
+            @media screen and (max-width: $break-medium) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @media screen and (max-width: $break-small) {
+                display: block;
+            }
+
+            &:before,
+            &:after, {
+                @media screen and (max-width: $break-medium) {
+                    content: none !important;
+                }
+            }
+
+            .fusion-layout-column {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                    width: 45% !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    width: 100% !important;
+                }
+
+                &.fusion-column-last {
+                    @media screen and (max-width: $break-medium) {
+                        padding-right: 0 !important;
+                    }
+                }
+
+                .fusion-column-wrapper {
+                    .fusion-title {
+                        h4 {
+                            @media screen and (max-width: $break-small) {
+                                text-align: center !important;
+                                font-size: 20px !important;
+                                line-height: 40px !important;
+                            }
+                        }
+                    }
+                    .fusion-text {
+                        @media screen and (max-width: $break-small) {
+                            text-align: center !important;
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                    .fusion-button-wrapper {
+                        @media screen and (max-width: $break-small) {
+                            float: none !important;
+                        }
+                        .fusion-button {
+                            @media screen and (max-width: $break-small) {
+                                display: table !important;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+/* end Injectables */
+
+/* Dermal Filler */
+.page-id-876 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+    }
+}
+/* end Dermal Filler */
+
+/* Anti Ageing */
+.page-id-886 {
+    #first-section {
+        @media screen and (max-width: $break-medium) {
+            padding-top: 50px !important;
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+
+        .fusion-layout-column {
+            &.fusion-column-first {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 50px !important;
+                }
+            }
+            .fusion-title {
+                @media screen and (max-width: $break-medium) {
+                    margin-bottom: 0 !important;
+                }
+
+                h3 {
+                    @media screen and (max-width: $break-medium) {
+                        text-align: center !important;
+                        font-size: 36px !important;
+                        line-height: 50px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 20px !important;
+                        line-height: 28px !important;
+                    }
+                }
+                h6 {
+                    @media screen and (max-width: $break-medium) {
+                        max-width: 510px;
+                        text-align: center !important;
+                        margin: 0 auto 30px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                        letter-spacing: 1.4px !important;
+                        margin-bottom: 20px !important;
+                    }
+                }
+            }
+            .fusion-text {
+                max-width: 610px;
+
+                @media screen and (max-width: $break-medium) {
+                    max-width: 100%;
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    line-height: 22px !important;
+                }
+            }
+            .fusion-button-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    float: none !important;
+                }
+                .fusion-button {
+                    @media screen and (max-width: $break-medium) {
+                        display: table !important;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .fusion-imageframe {
+                @media screen and (max-width: $break-medium) {
+                    display: table !important;
+                    margin: 0 auto !important;
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                }
+            }
+        }
+    }
+    .fusion-builder-row-2 {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: #487169;
+            width: 2px;
+            height: 100px;
+        }
+    }
+}
+/* end Anti Ageing */
+
+/* Captcha Box */
+.grecaptcha-badge {
+    display: none !important;
+}

@@ -1,0 +1,1143 @@
+/* Colors */
+$black: #1A1818;
+$white: #ffffff;
+$light-green: #A6D2CA;
+$medium-green: #6BC1B2;
+$dark-green: #487169;
+
+/* Fonts */
+$avenir-light: "Avenir Light";
+$avenir-book: "Avenir Book";
+$avenir-black: "Avenir Black";
+$avenir-heavy: "Avenir Heavy";
+$avenir-medium: "Avenir Medium";
+$starling: "starling";
+
+/* Breakpoints */
+$break-extra-small: 380px;
+$break-small: 480px;
+$break-sm-medium: 800px;
+$break-medium: 991px;
+$break-tablet: 1024px;
+$break-large: 1200px;
+$break-extra-large: 1800px;
+
+/* Global Classes to use */
+body {
+    overflow-x: hidden;
+}
+.avenir-book *{
+    font-family: $avenir-book !important;
+}
+.avenir-black *{
+    font-family: $avenir-black !important;
+}
+.avenir-heavy *{
+    font-family: $avenir-heavy !important;
+}
+.avenir-medium *{
+    font-family: $avenir-medium !important;
+}
+.starling *{
+    font-family: $starling !important;
+}
+.text-uppercase * {
+    text-transform: uppercase !important;
+}
+.fs-12 {
+    font-size: 12px !important;
+}
+.fs-24 {
+    font-size: 24px !important;
+}
+.text-dark-green * {
+    color: $dark-green !important;
+}
+
+/* Buttons */
+.fusion-button, .default-btn {
+    $size: 7px;
+    $width: 2px;
+  
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    background: $medium-green !important;
+    color: $white !important;
+    text-align: center;
+    display: inline-block;
+    padding: 12px 0 !important;
+    min-width: 158px;
+    // height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase !important;
+    border-radius: 30px !important;
+    font-family: $avenir-black !important;
+    
+    &:hover {
+        background: $dark-green !important;
+        
+        .arrow {
+            span {
+                width: $size * 2.414;
+            }
+            
+            @each $direction in 'left' 'right' {
+                &.arrow--#{$direction} {
+                    & span,
+                    &:before,
+                    &:after {
+                        #{$direction}: 0;
+                        transform-origin: #{$direction} 50%;
+                    }
+                    
+                    &:before,
+                    &:after {
+                        transition: #{$direction} 0.3s 0.05s;
+                    }
+                    
+                    & span {
+                        transition: width 0.3s, #{$direction} 0.3s 0.05s;
+                    }
+                    
+                    
+                    & span,
+                    &:before,
+                    &:after {
+                      #{$direction}: $size / 1.414 * -1;
+                    }
+                }
+            }
+        }
+    }
+    
+    &.w-arrow {
+        .fusion-button-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }  
+    }
+}
+
+.ua-mac_os_x {
+	.fusion-button,
+	.default-btn,
+	.book-now-btn,
+	.contact-us-btn {
+		padding: 13px 0 11px !important;
+		
+		.arrow {
+		    transform: translateY(-1px);
+		}
+	}
+}
+
+/* Button Arrows */
+.arrow {
+    $size: 7px;
+    $width: 2px;
+    
+    cursor: pointer;
+    display: block;
+    width: $size / 1.414;
+    height: $size / 1.414 * 2;
+    position: relative;
+    margin-left: 12px;
+    
+    & span,
+    &:before,
+    &:after {
+        background: $white;
+        content: '';
+        display: block;
+        width: $size;
+        height: $width;
+        position: absolute;
+        top: calc(50% - (#{$width} / 2));
+    }
+    
+    &:before {
+        transform: rotate(-45deg);
+    }
+    &:after {
+        transform: rotate(45deg);
+    }
+    
+    & span {
+        width: 0;
+    }
+    &:hover span {
+        width: $size * 2.414;
+    }
+  
+    @each $direction in 'left' 'right' {
+        &.arrow--#{$direction} {
+            & span,
+            &:before,
+            &:after {
+                #{$direction}: 0;
+                transform-origin: #{$direction} 50%;
+            }
+            
+            &:before,
+            &:after {
+                transition: #{$direction} 0.3s 0.05s;
+            }
+            
+            & span {
+                transition: width 0.3s, #{$direction} 0.3s 0.05s;
+            }
+            
+            
+            &:hover {
+                & span,
+                &:before,
+                &:after {
+                  #{$direction}: $size / 1.414 * -1;
+                }
+            }
+        }
+    }
+}
+
+/* Off Sale */
+.fusion-body {
+    .off-sale {
+        position: relative;
+        
+        @media screen and (max-width: $break-medium) {
+            padding-left: 55px !important;
+            padding-right: 55px !important;
+        }
+        @media screen and (max-width: $break-small) {
+            padding-left: 30px !important;
+            padding-right: 30px !important;
+        }
+        
+        &:after {
+            border: 110px solid #6BC1B2;
+            border-radius: 50%;
+            height: 465px;
+            width: 465px;
+            content: '';
+            position: absolute;
+            top: -470px;
+            right: -190px;
+            
+            @media screen and (max-width: $break-large) {
+                height: 355px;
+                width: 355px;
+                top: -220px;
+                right: -250px;
+            }
+            @media screen and (max-width: $break-medium) {
+                border: 70px solid #6bc1b2;
+            }
+            @media screen and (max-width: $break-small) {
+                border: 40px solid #6bc1b2;
+                height: 200px;
+                width: 200px;
+                top: -100px;
+                right: -120px;
+            }
+            @media screen and (max-width: 320px) {
+                border: 20px solid #6bc1b2;
+                height: 170px;
+                width: 170px;
+            }
+        }
+        
+        .fusion-layout-column {
+            &:hover {
+                .fusion-column-wrapper {
+                    background: $white !important;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px !important;
+                }
+            }
+            
+            @media screen and (max-width: $break-large) {
+                width: 100% !important;
+                float: none !important;
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+                display: block !important;
+            }
+            
+            .fusion-column-wrapper {
+                @media screen and (max-width: $break-large) {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+                .fusion-title {   
+                    word-break: break-word;
+                    h4 {
+                       @media screen and (max-width: $break-large) {
+                            font-size: 20px !important;
+                        } 
+                    }
+                }
+                .fusion-text * {
+                    color: #33413F !important;
+                }
+            }
+        }
+       
+        .slick-slide {
+            margin: 0 10px;
+            
+            @media screen and (max-width: $break-medium) {
+                margin: 0 30px;
+            }
+        }
+        
+        .slick-list {
+            margin: 0 -10px;
+            
+            @media screen and (max-width: $break-medium) {
+                margin: 0 -30px;
+            }
+        }
+        .slick-next {
+            right: 0;
+            top: unset;
+            bottom: -70px !important;
+    
+             &:before {
+                content: '\f054';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: #487169 !important;
+            }
+        }
+        .slick-prev {
+            left: 0;
+            top: unset;
+            bottom: -70px !important;
+            
+             &:before {
+                content: '\f053';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: #487169 !important;
+            }
+        }
+        .slick-next, .slick-prev {
+            border: 2px solid #487169;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+    }
+}
+/* end Off Sale */
+
+/* Ready To Book Appointment */
+#ready-to-book-appoinment {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    
+    @media screen and (max-width: $break-medium) {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .fusion-builder-row {
+        position: relative;
+        
+        @media screen and (max-width: $break-medium) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+        
+        .bg-col-image {
+            .fusion-column-wrapper {
+                clip-path: ellipse(90% 115% at 7% 50%);
+                
+                @media screen and (max-width: $break-medium) {
+                    clip-path: unset;
+                    border-radius: 50%;
+                    width: 500px;
+                    height: 500px !important;
+                    padding: 0 !important;
+                    position: absolute;
+                    right: -130px;
+                    top: 50px;
+                }
+                @media screen and (max-width: 768px) {
+                    right: -230px;
+                }
+                @media screen and (max-width: $break-small) {
+                    width: 410px;
+                    height: 410px !important;
+                    right: -260px;
+                }
+            }
+        }
+        .fusion-column-first {
+            @media screen and (max-width: $break-medium) {
+                height: 500px !important;
+                width: 50% !important;
+            }
+            @media screen and (max-width: $break-small) {
+                height: 410px !important;
+            }
+            @media screen and (max-width: 320px) {
+                display: none !important;
+            }
+            .fusion-column-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    padding: 0 !important;
+                }
+               
+            }
+        }
+        .fusion-column-last {
+            
+            @media screen and (max-width: $break-medium) {
+                display: flex;
+                align-items: center;
+                padding-left: 55px;
+            }
+            @media screen and (max-width: $break-small) {
+                padding-left: 30px;
+            }
+            
+            .fusion-column-wrapper {
+                
+                @media screen and (max-width: $break-medium) {
+                    padding: 0 !important;
+                }
+                
+                .headline {
+                    max-width: 480px;
+                    
+                    @media screen and (max-width: $break-small) {
+                        max-width: 180px;
+                    }
+                    @media screen and (max-width: 320px) {
+                        max-width: 230px;
+                    }
+                    
+                    h3 {
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 28px !important;
+                        }
+                    }
+                }
+                .subheadline {
+                    max-width: 480px;
+                    
+                    @media screen and (max-width: 768px) {
+                        max-width: 370px;
+                    }
+                    
+                    h6 {
+                        @media screen and (max-width: $break-small) {
+                            font-size: 14px !important;
+                            line-height: 22px !important;
+                            letter-spacing: 1.4px !important;
+                        }
+                    }
+                }
+                .secure-checkout {
+                    p {
+                        margin: 20px 0 0;
+                        font-size: 12px;
+                        
+                        &:nth-child(2) {
+                            margin-top: 0 !important;
+                        }
+                    }
+                    img:nth-child(2) {
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* end Ready To Book Appointment */
+
+/* Get In Touch */
+#get-in-touch {
+    .fusion-title {
+        @media screen and (max-width: $break-small) {
+            margin-bottom: 6px !important;
+        }
+        
+        h3 {
+            @media screen and (max-width: $break-small) {
+                font-size: 20px !important;
+                line-height: 50px !important;
+            }
+        }
+        h6 {
+            @media screen and (max-width: $break-small) {
+                font-size: 14px !important;
+                line-height: 22px !important;
+                letter-spacing: 1.4px !important;
+            }
+        }
+    }
+    .wpcf7-form {
+        .form-grp {
+            display: flex;
+            justify-content: space-between;
+            
+            @media screen and (max-width: $break-medium) {
+                display: block;
+            }
+            
+            .wpcf7-form-control-wrap {
+                display: block;
+                width: 100%;
+                padding: 5px;
+            }
+        }
+        .wpcf7-form-control-wrap {
+            padding: 5px;
+            display: block;
+            width: 100%;
+        }
+        .wpcf7-submit.default-btn {
+            margin: 0 auto !important;
+            display: block !important;
+            min-width: 121px !important;
+        }
+    }
+}
+/* end Get In Touch */
+
+/* Before and After */
+#b-and-after {
+    position: relative;
+    
+    @media screen and (max-width: $break-medium) {
+       padding-top: 50px !important;
+       padding-bottom: 50px !important;
+    }
+    
+    &:after {
+        content: '';
+        width: 2px;
+        height: 175px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -95px;
+        z-index: 9;
+        background: #487169;
+        
+        @media screen and (max-width: $break-medium) {
+            top: -43px;
+            height: 85px;
+        }
+    }
+    .fusion-title {
+        @media screen and (max-width: $break-small) {
+            margin-bottom: 0 !important;
+        }
+        
+        h3 {
+            @media screen and (max-width: $break-small) {
+                font-size: 20px !important;
+                line-height: 50px !important;
+            }
+        }
+        h6 {
+            font-family: $avenir-medium !important;
+            
+            @media screen and (max-width: $break-small) {
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+            }
+        }
+    }
+    .default-btn.mw-215 {
+        min-width: 215px !important;
+    }
+    .fusion-layout-column {
+        > .fusion-column-wrapper {
+            > .fusion-builder-row {
+                @media screen and (max-width: $break-medium) {
+                    display: flex;
+                }
+                
+                > .fusion-layout-column {
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 0 !important;
+                    }
+                    
+                    > .fusion-column-wrapper {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            padding: 10px !important;
+                        }
+                        
+                        .fusion-button {
+                            @media screen and (max-width: 768px) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* end Before and After */
+
+/* Related Servies */
+#related-services {
+    .fusion-builder-row {
+        .fusion-layout-column {
+            
+            &.box-image {
+                margin-bottom: 120px !important;
+                
+                .fusion-column-wrapper {
+                    position: relative;
+                    
+                    > .fusion-builder-row {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        
+                        .fusion-layout-column {
+                            margin-bottom: 0 !important;
+                            
+                            .fusion-button {
+                                border-radius: 0 !important;
+                                height: 91px !important;
+                                font-size: 12px !important;
+                                letter-spacing: 1.2px !important;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                
+                                &.light-bg {
+                                    background: $light-green !important;
+                                }
+                                
+                                &:hover {
+                                    background: $white !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.box-info {
+                margin-bottom: 120px !important;
+                
+                .fusion-column-wrapper {
+                    .fusion-title.w-circle {
+                        h3 {
+                            display: flex;
+                            align-items: center;
+                            
+                            .circle {
+                                border: 5px solid #6bc1b2;
+                                border-radius: 50%;
+                                width: 37px;
+                                height: 37px;
+                                margin-right: 10px;
+                            }   
+                        }   
+                    }
+                }
+            }
+        }
+    }
+}
+/* Related Servies */
+
+/* Why Choose Us */
+#why-choose-us {
+    .fusion-content-boxes {
+        margin-bottom: 0 !important;
+        margin-top: 40px !important;
+        
+        .fusion-column {
+            .col {
+                .heading {
+                    text-align: left !important;
+                }
+                .content-container {
+                    text-align: left !important;
+                }
+            }
+        }
+    }
+}
+/* end Why Choose Us */
+
+/* Benefits of ACNE */
+#benefits-of-acne {
+    @media screen and (max-width: $break-medium) {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+    }
+    @media screen and (max-width: $break-small) {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+    .fusion-builder-row {
+        .fusion-layout-column {
+            &.fusion-column-first {
+                .fusion-title {
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 0 !important;
+                    }
+                    h3 {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                            font-size: 36px !important;
+                            line-height: 50px !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 28px !important;
+                        }
+                    }
+                    h6 {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                            max-width: 510px;
+                            margin: 0 auto 60px !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                             max-width: 100%;
+                            font-size: 14px !important;
+                            letter-spacing: 1.4px !important;
+                            line-height: 18px !important;
+                        }
+                    }
+                }
+                .fusion-content-boxes {
+                    .fusion-column {
+                        @media screen and (max-width: $break-medium) {
+                            float: left !important;
+                            width: 50% !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            float: none !important;
+                            width: 100% !important;
+                        }
+                        
+                        &.content-box-column-first-in-row {
+                            .col {
+                                .heading {
+                                    .image {
+                                        img {
+                                            margin-bottom: 30px !important;
+                                            
+                                            @media screen and (max-width: $break-small) {
+                                                margin-bottom: 20px !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .col {
+                            
+                            .heading {
+                                text-align: left !important;
+                                
+                                @media screen and (max-width: $break-medium) {
+                                    text-align: center !important;
+                                }
+                                @media screen and (max-width: $break-small) {
+                                    font-size: 20px !important;
+                                    line-height: 32px !important;
+                                }
+                            }
+                            .content-container {
+                                text-align: left !important;
+                                
+                                @media screen and (max-width: $break-medium) {
+                                    text-align: center !important;
+                                }
+                                @media screen and (max-width: $break-small) {
+                                    font-size: 14px !important;
+                                    line-height: 22px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .two-images {
+                .image-one {
+                    background-size: cover;
+                    width: 408px;
+                    height: 502px;
+                    background-position: center center;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    
+                    @media screen and (max-width: $break-medium){
+                        width: 700px;
+                        height: 332px;
+                        top: -70px;
+                        right: 0;
+                    }
+                    @media screen and (max-width: $break-sm-medium){
+                        width: 550px;
+                    }
+                    @media screen and (max-width: $break-small){
+                        width: 100%;
+                        height: 332px;
+                        top: -70px;
+                    }
+                }
+                .image-two {
+                    background-size: cover;
+                    width: 296px;
+                    height: 444px;
+                    background-position: center center;
+                    position: absolute;
+                    top: 120px;
+                    left: 70px;
+                    
+                    @media screen and (max-width: $break-medium) {
+                        width: 226px;
+                        height: 254px;
+                        top: -20px;
+                        left: 0;
+                    }
+                    @media screen and (max-width: $break-small){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/* end Benefits of ACNE */
+
+/* Pricing */
+#pricing {
+    @media screen and (max-width: $break-medium) {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+    }
+    @media screen and (max-width: $break-small) {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+    .fusion-title {
+        @media screen and (max-width: $break-medium) {
+            margin-bottom: 0 !important;
+        }
+        
+        h3 {
+            @media screen and (max-width: $break-medium) {
+                text-align: center !important;
+                font-size: 36px !important;
+                line-height: 50px !important;
+            }
+            @media screen and (max-width: $break-small) {
+                font-size: 20px !important;
+                line-height: 28px !important;
+            }
+        }
+        h6 {
+            @media screen and (max-width: $break-medium) {
+                text-align: center !important;
+                max-width: 510px;
+                margin: 0 auto 60px !important;
+            }
+            @media screen and (max-width: $break-small) {
+                 max-width: 100%;
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+                line-height: 18px !important;
+            }
+        }
+    }
+    .fusion-separator {
+        @media screen and (max-width: $break-medium) {
+            display: none !important;
+        }
+    }
+    table {
+        border: 0 none;
+        overflow: hidden;
+        
+        th, td {
+            white-space: normal;
+        }
+        
+        @media screen and (max-width: $break-small) {
+            overflow: scroll;    
+        }
+        
+        thead {
+            th {
+                border-bottom: 2px solid $dark-green !important;
+                border-top: 0 none !important;
+                border-left: 0 none !important;
+                border-right: 0 none !important;
+                background: transparent;
+                color: $dark-green !important;
+                text-transform: uppercase;
+                font-family: $avenir-black !important;
+                font-size: 18px;
+                letter-spacing: 1.8px;
+                line-height: 26px;
+                
+                &:nth-child(4) {
+                    @media screen and (max-width: 768px) {
+                        //display: none;
+                    }
+                }
+                
+                @media screen and (max-width: $break-small) {
+                    font-size: 14px !important;
+                    letter-spacing: 1.4px !important;
+                    min-width: 110px;
+                    vertical-align: top;
+                    line-height: 1.2;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    background: transparent;
+                }
+                td {
+                    border: 0 none !important;
+                    padding: 30px 20px !important;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: $black;
+                    
+                    &:nth-child(1) {
+                        font-family: $avenir-heavy !important;
+                    }
+                    &:nth-child(4) {
+                        @media screen and (max-width: 768px) {
+                            //display: none;
+                        }
+                    }
+                    &:not(:nth-child(1)) {
+                        font-family: $avenir-light !important;
+                    }
+                    
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        max-width: 300px;
+                        word-break: break-word;
+                        white-space: pre-line;
+                        padding: 10px 15px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+/* Pricing */
+
+/* Info CTA */
+#info-cta {
+    .fusion-builder-row {
+        .fusion-layout-column {
+            @media screen and (max-width: $break-medium) {
+                margin-bottom: 8px !important;
+            }
+            .fusion-column-wrapper {
+                @media screen and (max-width: $break-medium) {
+                    text-align: center !important;
+                }
+                @media screen and (max-width: $break-small) { 
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+                .fusion-title {
+                    h3 {
+                        @media screen and (max-width: $break-medium) {
+                            text-align: center !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            font-size: 30px !important;
+                            line-height: 46px !important;
+                        }
+                    }
+                }
+                .fusion-text {
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 22px !important;
+                    }
+                }
+            }
+        }
+    }       
+}
+/* end Info CTA */
+
+/* How It Works */
+#how-it-works {
+    @media screen and (max-width: $break-medium) {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+        padding-bottom: 30px !important;
+    }
+    @media screen and (max-width: $break-small) {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+    .fusion-title {
+        h3 {
+            @media screen and (max-width: $break-medium) {
+                font-size: 36px !important;
+                line-height: 50px !important;
+            }
+            @media screen and (max-width: $break-small) {
+                font-size: 20px !important;
+                line-height: 28px !important;
+            }
+        }
+        h6 {
+            @media screen and (max-width: $break-medium) {
+                text-align: center !important;
+                max-width: 510px;
+                margin: 0 auto 60px !important;
+            }
+            @media screen and (max-width: $break-small) {
+                 max-width: 100%;
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+                line-height: 18px !important;
+            }
+        }
+    }
+    .fusion-content-boxes {
+        @media screen and (max-width: $break-medium) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0 !important;
+        }
+        @media screen and (max-width: $break-small) {
+            display: block;
+        }
+        .fusion-column {
+            @media screen and (max-width: $break-medium) {
+                float: left !important;
+                width: 33.33% !important;
+            }
+            @media screen and (max-width: $break-small) {
+                float: none !important;
+                width: 100% !important;
+            }
+            .col {
+                .heading {
+                    h2 {
+                        @media screen and (max-width: $break-small) {
+                            font-size: 20px !important;
+                            line-height: 32px !important;
+                        }
+                    }
+                }
+                .content-container {
+                    @media screen and (max-width: $break-small) {
+                        font-size: 14px !important;
+                        line-height: 28px !important;
+                    }
+                }
+            }   
+        }
+    }
+}
+/* end How It Works */
+
+.imgColumn{
+    .fusion-column-wrapper{
+        min-height: 680px !important;
+        position: relative;
+        text-align: center;
+        .laserTreatmentImg-small{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(50%);
+            z-index: 2;
+            
+            img{
+                width: 240px;
+                height: 351px;
+            }
+        }
+        .laserTreatmentImg-large{
+            z-index: 1;
+            img{
+                width: 444px;
+                height: 643px;
+                max-width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: $break-medium){
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+    .imgColumn{
+        
+        .fusion-column-wrapper{
+            text-align: right;
+            min-height: 450px !important;
+        }
+        .laserTreatmentImg-small{
+            transform: unset !important;
+            top: 35px !important;
+            img{
+                height: 321px !important;
+            }
+        }
+        .laserTreatmentImg-large{
+            img{
+                width: calc(100% - 20%) !important;
+                height: 385px !important;
+                object-fit: cover;
+            }
+        }
+    }
+}
+@media (max-width: 767px){
+    padding-top: 50px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    .imgColumn{
+        margin-bottom: 0px !important;
+        .fusion-column-wrapper{
+            min-height: 1px !important;
+        }
+        .laserTreatmentImg-small{
+            display: none;
+        }
+        .laserTreatmentImg-large{
+            img{
+                width: 100% !important;
+                height: 242px;
+            }
+        }
+    }
+}

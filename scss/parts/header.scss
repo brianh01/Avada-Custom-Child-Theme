@@ -1,0 +1,443 @@
+
+.fusion-header-wrapper {
+    .fusion-header-v3 {
+        .fusion-secondary-header {
+            @media screen and (max-width: $break-large) {
+                padding: 0 10px !important;
+            }
+            
+            .fusion-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                &:before,
+                &:after {
+                    content: none !important;
+                }
+                
+                .fusion-alignleft {
+                    float: none;
+                    flex-grow: unset;
+                    width: 33.33%;
+                    
+                    @media screen and (max-width: 1550px) {
+                        width: 10%;
+                    }
+                    @media screen and (max-width: $break-large) {
+                        width: 15%;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 24%;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        width: 34%;
+                    }
+                    @media screen and (max-width: $break-extra-small) {
+                        width: 44%;
+                    }
+                    
+                    .fusion-social-links-header {
+                        @media screen and (max-width: $break-small) {
+                            margin-bottom: 0 !important;
+                        }
+                        .fusion-social-networks-wrapper {
+                            @media screen and (max-width: $break-large) {
+                                text-align: left;
+                            }
+                            @media screen and (max-width: $break-sm-medium) {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .fusion-alignright {
+                    float: none;
+                    flex-grow: unset;
+                    
+                    @media screen and (max-width: $break-large) {
+                        display: none;
+                    }
+                    
+                    .fusion-secondary-menu {
+                        ul#menu-top-menu {
+                            li {
+                                a {
+                                    text-transform: uppercase;
+                                    font-family: $avenir-medium !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .fusion-custom {
+                    display: flex;
+                    align-items: center;
+                    
+                    @media screen and (max-width: $break-small) {
+                        flex-direction: row;
+                    }
+                    .secure-checkout {
+                        @media screen and (max-width: $break-small) {
+                            display: none;
+                        }
+                    }
+                    
+                    .imgs {
+                        @media screen and (max-width: $break-extra-small) {
+                            display: flex;
+                        }
+                        img {
+                            @media screen and (max-width: $break-extra-small) {
+                                width: 80px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .fusion-header {
+            @media screen and (max-width: $break-sm-medium) {
+                padding-right: 10px !important;
+                padding-left: 10px !important;
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+            .fusion-logo {
+                img {
+                    @media screen and (max-width: $break-small) {
+                        width: 180px;
+                    }
+                }
+            }
+            .fusion-row {
+                @media screen and (max-width: 1295px) {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                
+                &:before,
+                &:after {
+                    @media screen and (max-width: 1295px) {
+                        content: none !important;
+                    }
+                }
+                
+                .c-btns {
+                    float: right;
+                    width: 24%;
+                    height: 90px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .book-now-btn {
+                        background: $medium-green;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        letter-spacing: 1.2px;
+                        border-radius: 30px;
+                        min-width: 150px;
+                        text-align: center;
+                        // height: 36px;
+                        line-height: 1;
+                        margin-right: 22px;
+                        font-family: $avenir-black !important;
+                        padding: 12px 0;
+                        
+                        @media screen and (max-width: 1415px) {
+                            margin-right: 6px;
+                        }
+                        @media screen and (max-width: $break-sm-medium) {
+                            margin-right: 6px;
+                            min-width: 120px;
+                            font-size: 10px;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            display: none;
+                        }
+                        
+                        &:hover {
+                            background: $dark-green;
+                            color: $white;
+                        }
+                    }
+                    .contact-us-btn {
+                        background: $dark-green;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        letter-spacing: 1.2px;
+                        border-radius: 30px;
+                        min-width: 150px;
+                        text-align: center;
+                        //height: 36px;
+                        line-height: 1;
+                        font-family: $avenir-black !important;
+                        padding: 12px 0;
+
+                        @media screen and (max-width: $break-sm-medium) {
+                            min-width: 120px;
+                            font-size: 10px;
+                        }
+                        @media screen and (max-width: 768px) {
+                            display: none;
+                        }
+                        
+                        &:hover {
+                            background: $medium-green;
+                            color: $white;
+                        }
+                    }
+                }
+                .fusion-mobile-menu-icons {
+                    a {
+                        @media screen and (max-width: $break-sm-medium) {
+                            margin-left: 6px !important;
+                        }
+                    }
+                }
+                .fusion-main-menu {
+                    float: right !important;
+                    
+                    .fusion-menu {
+                        li{
+                            @media screen and (max-width: 1415px) {
+                                padding-right: 3px !important;
+                            }
+                            &:hover {
+                                a {
+                                    &:after {
+                                        color: $medium-green;
+                                    }
+                                }
+                            }
+                            &.menu-item-has-children {
+                                > a {
+                                    &:after {
+                                        content: '\f078';
+                                        font-family: "Font Awesome 5 Free";
+                                        font-weight: 900;
+                                        margin-left: 10px;
+                                        color: $black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #mobile-menu-mobile-menu {
+                display: flex;
+                flex-wrap: wrap;
+                background: $black;
+                justify-content: center;
+    
+                li{
+                    width: 100%;
+                    border-bottom: 1px solid #fff;
+                    
+                    &.menu-item-has-children {
+                        
+                        > a {
+                        }
+                    }
+                    
+                    &.contact-btn {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom:none;
+                        padding: 0 0 15px;
+                        
+                        @media screen and (max-width: 767px) {
+                            border-bottom: 1px solid #fff;
+                            padding-bottom: 17px;
+                            margin: 0 !important;
+                            padding-top: 5px;
+                            padding-right:5px;
+                        }
+                        
+                        > a {
+                            background: #6bc1b2;
+                            color: #fff;
+                            padding: 0;
+                            height: 32px !important;
+                            border-radius: 30px;
+                            width: 120px !important;
+                            height: 36px !important;
+                            
+                            @media screen and (max-width: $break-small) {
+                                width: 150px !important;
+                                margin-right: 10px;
+                            }
+                            @media screen and (max-width: 320px) {
+                                width: 110px !important;
+                            }
+                        }
+                    }
+                    &.book-now-btn {
+                       width: 130px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom:none;
+                        
+                       @media screen and (max-width: 767px) {
+                            width: calc(50% - 60px);
+                            border-bottom: 1px solid #fff;
+                            padding-bottom: 18px;
+                            margin: 0 60px 0 0!important;
+                            padding-top: 18px;
+                            padding-left:5px;
+                            justify-content: flex-start;
+                        }
+                        
+                        > a {
+                            background: #487169;
+                            color: #fff;
+                            font-size: 12px !important;
+                            letter-spacing: 1.2px;
+                            text-transform: uppercase;
+                            padding: 0 !important;
+                            width: 120px !important;
+                            height: 36px !important;
+                            border-radius: 30px;
+                            
+                            @media screen and (max-width: $break-small) {
+                                width: 150px !important;
+                            }
+                            @media screen and (max-width: 320px) {
+                                width: 110px !important;
+                            }
+                        }
+                    }
+                    &.mobile-text {
+                        width: auto;
+                        border: 0 none !important;
+                        display: flex;
+                        align-items: center;
+                        
+                        > a {
+                            font-size: 12px !important;
+                            font-family: $avenir-book !important;
+                            text-decoration: underline !important;
+                            padding-left: 0 !important;
+                            padding-right: 6px !important;
+                            
+                            @media screen and (max-width: $break-small) {
+                                height: 32px !important;
+                            }
+                        }
+                    }
+                    
+                    a {
+                        height: 62px !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .fusion-open-submenu {
+                        right: 20px;
+                        top: 7px;
+                    }
+                    
+                    > ul.sub-menu {
+                        background: #E8F3F1 !important;
+                        
+                        li {
+                            border: 0 none !important;
+                            a {
+                                background: #E8F3F1 !important;
+                                color: #487169 !important;
+                                height: 42px !important;
+                                border-bottom: 1px solid #E8F3F1 !important;
+                                font-family: $avenir-medium !important;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Page Title Bar */
+.fusion-page-title-bar {
+    background-size: cover !important;
+    
+    @media screen and (max-width: $break-medium) {
+        height: 548px !important;
+        display: flex;
+    }
+    @media screen and (max-width: $break-medium) {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+    }
+    @media screen and (max-width: $break-small) {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        height: 385px !important;
+    }
+    
+    .fusion-page-title-row {
+        .fusion-page-title-wrapper {
+            
+            @media screen and (max-width: $break-medium) {
+                display: flex !important;
+            }
+                
+            .fusion-page-title-captions {
+                max-width: 750px;
+                
+                @media screen and (max-width: $break-medium) {
+                    max-width: 428px;
+                }
+                
+                h1 {
+                    font-family: $starling !important;
+                    font-weight: bold !important;
+                    margin-bottom: 20px;
+                    
+                    @media screen and (max-width: 768px) {
+                        font-size: 38px !important;
+                        line-height: 46px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        text-align: center !important;
+                        font-size: 24px !important;
+                        line-height: 32px !important;
+                    }
+                }
+                h3 {
+                    font-size: 18px !important;
+                    letter-spacing: 1.8px;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    font-family: $avenir-black !important;
+                    margin-bottom: 15px !important;
+                    
+                    @media screen and (max-width: $break-small) {
+                        text-align: center !important;
+                        font-size: 14px !important;
+                        letter-spacing: 1.4px !important;
+                        line-height: 22px !important;
+                    }
+                }
+                .pagetitle-sub-content {
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-family: $avenir-book !important;
+                    
+                    @media screen and (max-width: $break-small) {
+                        text-align: center !important;
+                    }
+                }
+            }
+        }
+    }
+}

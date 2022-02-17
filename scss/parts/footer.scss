@@ -1,0 +1,255 @@
+.fusion-footer {
+    /** widget area **/
+    footer.fusion-footer-widget-area {
+        
+        @media screen and (max-width: $break-medium) {
+            padding-left: 100px !important;
+            padding-right: 100px !important;
+        }
+        @media screen and (max-width: 768px) {
+            padding-left: 50px !important;
+            padding-right: 50px !important;
+        }
+    
+        .fusion-row {
+            .fusion-columns {
+                .fusion-column {
+                    @media screen and (max-width: $break-tablet) {
+                        float: left !important;
+                    }
+                    @media screen and (max-width: $break-medium) {
+                        margin-bottom: 20px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        text-align: center !important;
+                    }
+                    
+                    &:not(:first-child){
+                        .fusion-footer-widget-column {
+                            margin-bottom: 0;
+                            min-height: 250px;
+                            
+                            @media screen and (max-width: $break-medium) {
+                                min-height: auto;
+                            }
+                        }
+                    }
+                    &:nth-child(1) {
+                        width: 30% !important;
+                        
+                        @media screen and (max-width: $break-medium) {
+                            width: 50% !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            width: 100% !important;
+                        }
+                        
+                        #custom_html-2 {
+                            .custom-html-widget {
+                                max-width: 300px;
+                                
+                                @media screen and (max-width: $break-small) {
+                                    max-width: 100% !important;
+                                }
+                            }
+                        }
+                        #custom_html-6 {
+                            .custom-html-widget {
+                                max-width: 300px;
+                                
+                                @media screen and (max-width: $break-small) {
+                                    max-width: 100% !important;
+                                }
+                                
+                                .wpcf7-form {
+                                    .wpcf7-form-control-wrap {
+                                        input::-webkit-input-placeholder { /* Edge */
+                                          color: $white;
+                                        }
+                                        input:-ms-input-placeholder { /* Internet Explorer */
+                                          color: $white;
+                                        }
+                                        input::placeholder {
+                                          color: $white;
+                                        }
+                                        
+                                        input.wpcf7-email {
+                                            padding-left: 0;
+                                            padding-right: 0;
+                                            background: transparent !important;
+                                            border-bottom: 1px solid #fff;
+                                            border-top: 0 none;
+                                            border-right: 0 none;
+                                            border-left: 0 none;
+                                            margin-bottom: 30px;
+                                            border-radius: 0 !important;
+                                            font-size: 12px;
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-child(2) {
+                        width: 70% !important;
+                        
+                        @media screen and (max-width: $break-medium) {
+                            width: 40% !important;
+                            float: right !important;
+                        }
+                        @media screen and (max-width: $break-small) {
+                            width: 100% !important;
+                            float: none !important;
+                        }
+                    }
+                }
+                .footer-top {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    @media screen and (max-width: $break-medium) {
+                        display: block;
+                        
+                    }
+                    
+                    > section {
+                        @media screen and (max-width: $break-medium) {
+                            margin-bottom: 62px !important;
+                        }
+                    }
+                    
+                }
+                .footer-bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    @media screen and (max-width: $break-medium) {
+                        width: 100%;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        display: block;
+                    }
+                }
+                .custom-html-widget {
+                    font-size: 12px;
+                    line-height: 18px !important;
+                    
+                    a {
+                        text-decoration: underline !important;
+                    }
+                    ul.opening-hrs {
+                        > li {
+                            font-size: 12px;
+                            margin-bottom: 8px;
+                            text-decoration: underline;
+                        }
+                    }
+                    ul.social-icons {
+                        > li {
+                            font-size: 12px;
+                            margin-bottom: 8px;
+                            text-decoration: underline;
+                            
+                            i {
+                               margin-right: 5px;
+                               color: $medium-green !important;
+                            }
+                        }
+                    }
+                }
+                .widget-title {
+                    text-transform: capitalize !important;
+                    margin-bottom: 15px !important;
+                    font-family: $starling !important;
+                    
+                    @media screen and (max-width: $break-medium) {
+                        font-size: 18px !important;
+                    }
+                    @media screen and (max-width: $break-small) {
+                        text-align: center !important;
+                    }
+                }
+                .fusion-checklist {
+                    li {
+                        @media screen and (max-width: $break-small) {
+                            text-align: center !important;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .fusion-li-item-content {
+                            text-decoration: underline !important;
+                            
+                            @media screen and (max-width: $break-small) {
+                                margin-left: 0 !important;
+                            }
+                        }
+                    }
+                }
+                ul.menu {
+                    > li {
+                        padding: 0;
+                        
+                        @media screen and (max-width: $break-small) {
+                            text-align: center !important;
+                        }
+                            
+                        a {
+                            font-size: 12px !important;
+                            text-decoration: underline !important;
+                            
+                            &:before {
+                                content: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /** copyright area **/
+    footer.fusion-footer-copyright-area {
+        padding-bottom: 0 !important;
+        
+        .fusion-row {
+            border-top: 1px solid $white;
+            
+            .fusion-copyright-content {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                
+                a {
+                    text-decoration: underline !important;
+                }
+            }
+        }
+    }
+}
+a.booknow-footer {
+    background: #6bc1b2;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    border-radius: 30px;
+    min-width: 180px;
+    text-align: center;
+    line-height: 1;
+    margin-right: 22px;
+    font-family: "Avenir Black" !important;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 39px;
+    right: -14px;
+    z-index: 9999;
+    
+    &:hover {
+        background: #487169;
+        color: #fff !important;
+    }
+}
